@@ -1,0 +1,4348 @@
+[
+  {
+    "code": "gh",
+    "name_ko": "가나",
+    "name_en": "Ghana",
+    "description": {
+      "capital": "Accra",
+      "population": 33742380,
+      "area_km2": 238533,
+      "languages": [
+        "English"
+      ],
+      "currency": "Ghanaian cedi (₵)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/gh.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ga",
+    "name_ko": "가봉",
+    "name_en": "Gabon",
+    "description": {
+      "capital": "Libreville",
+      "population": 2469296,
+      "area_km2": 267668,
+      "languages": [
+        "French"
+      ],
+      "currency": "Central African CFA franc (Fr)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/ga.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "gy",
+    "name_ko": "가이아나",
+    "name_en": "Guyana",
+    "description": {
+      "capital": "Georgetown",
+      "population": 772975,
+      "area_km2": 214969,
+      "languages": [
+        "English"
+      ],
+      "currency": "Guyanese dollar ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/gy.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "gm",
+    "name_ko": "감비아",
+    "name_en": "Gambia",
+    "description": {
+      "capital": "Banjul",
+      "population": 2422712,
+      "area_km2": 10689,
+      "languages": [
+        "English"
+      ],
+      "currency": "dalasi (D)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/gm.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "gg",
+    "name_ko": "건지 섬",
+    "name_en": "Guernsey",
+    "description": {
+      "capital": "St. Peter Port",
+      "population": 64781,
+      "area_km2": 78,
+      "languages": [
+        "English",
+        "French",
+        "Guernésiais"
+      ],
+      "currency": "British pound (£)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/gg.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "gp",
+    "name_ko": "과들루프",
+    "name_en": "Guadeloupe",
+    "description": {
+      "capital": "Basse-Terre",
+      "population": 378561,
+      "area_km2": 1628,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/gp.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "gt",
+    "name_ko": "과테말라",
+    "name_en": "Guatemala",
+    "description": {
+      "capital": "Guatemala City",
+      "population": 18079810,
+      "area_km2": 108889,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Guatemalan quetzal (Q)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/gt.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "gu",
+    "name_ko": "괌",
+    "name_en": "Guam",
+    "description": {
+      "capital": "Hagåtña",
+      "population": 153836,
+      "area_km2": 549,
+      "languages": [
+        "Chamorro",
+        "English",
+        "Spanish"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/gu.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "gd",
+    "name_ko": "그레나다",
+    "name_en": "Grenada",
+    "description": {
+      "capital": "St. George's",
+      "population": 109021,
+      "area_km2": 344,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/gd.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "gr",
+    "name_ko": "그리스",
+    "name_en": "Greece",
+    "description": {
+      "capital": "Athens",
+      "population": 10400720,
+      "area_km2": 131990,
+      "languages": [
+        "Greek"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/gr.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "gl",
+    "name_ko": "그린란드",
+    "name_en": "Greenland",
+    "description": {
+      "capital": "Nuuk",
+      "population": 56542,
+      "area_km2": 2166086,
+      "languages": [
+        "Greenlandic"
+      ],
+      "currency": "krone (kr.)",
+      "subregion": "North America"
+    },
+    "flag_uri": "assets/flags/gl.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "gn",
+    "name_ko": "기니",
+    "name_en": "Guinea",
+    "description": {
+      "capital": "Conakry",
+      "population": 14363931,
+      "area_km2": 245857,
+      "languages": [
+        "French"
+      ],
+      "currency": "Guinean franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/gn.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "gw",
+    "name_ko": "기니비사우",
+    "name_en": "Guinea-Bissau",
+    "description": {
+      "capital": "Bissau",
+      "population": 1781308,
+      "area_km2": 36125,
+      "languages": [
+        "Portuguese",
+        "Upper Guinea Creole"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/gw.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "na",
+    "name_ko": "나미비아",
+    "name_en": "Namibia",
+    "description": {
+      "capital": "Windhoek",
+      "population": 3022401,
+      "area_km2": 825615,
+      "languages": [
+        "Afrikaans",
+        "German",
+        "English",
+        "Herero",
+        "Khoekhoe",
+        "Kwangali",
+        "Lozi",
+        "Ndonga",
+        "Tswana"
+      ],
+      "currency": "Namibian dollar ($)",
+      "subregion": "Southern Africa"
+    },
+    "flag_uri": "assets/flags/na.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "nr",
+    "name_ko": "나우루",
+    "name_en": "Nauru",
+    "description": {
+      "capital": "Yaren",
+      "population": 11680,
+      "area_km2": 21,
+      "languages": [
+        "English",
+        "Nauru"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/nr.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "ng",
+    "name_ko": "나이지리아",
+    "name_en": "Nigeria",
+    "description": {
+      "capital": "Abuja",
+      "population": 223800000,
+      "area_km2": 923768,
+      "languages": [
+        "English"
+      ],
+      "currency": "Nigerian naira (₦)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/ng.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "aq",
+    "name_ko": "남극",
+    "name_en": "Antarctica",
+    "description": {
+      "capital": "",
+      "population": 1300,
+      "area_km2": 14000000,
+      "languages": [],
+      "currency": "",
+      "subregion": ""
+    },
+    "flag_uri": "assets/flags/aq.png",
+    "continent": "Antarctic"
+  },
+  {
+    "code": "ss",
+    "name_ko": "남수단",
+    "name_en": "South Sudan",
+    "description": {
+      "capital": "Juba",
+      "population": 15786898,
+      "area_km2": 619745,
+      "languages": [
+        "English"
+      ],
+      "currency": "South Sudanese pound (£)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/ss.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "za",
+    "name_ko": "남아프리카 공화국",
+    "name_en": "South Africa",
+    "description": {
+      "capital": "Pretoria",
+      "population": 63100945,
+      "area_km2": 1221037,
+      "languages": [
+        "Afrikaans",
+        "English",
+        "Southern Ndebele",
+        "Northern Sotho",
+        "Southern Sotho",
+        "Swazi",
+        "Tswana",
+        "Tsonga",
+        "Venda",
+        "Xhosa",
+        "Zulu"
+      ],
+      "currency": "South African rand (R)",
+      "subregion": "Southern Africa"
+    },
+    "flag_uri": "assets/flags/za.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "nl",
+    "name_ko": "네덜란드",
+    "name_en": "Netherlands",
+    "description": {
+      "capital": "Amsterdam",
+      "population": 18100436,
+      "area_km2": 41865,
+      "languages": [
+        "Dutch"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/nl.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "np",
+    "name_ko": "네팔",
+    "name_en": "Nepal",
+    "description": {
+      "capital": "Kathmandu",
+      "population": 29911840,
+      "area_km2": 147181,
+      "languages": [
+        "Nepali"
+      ],
+      "currency": "Nepalese rupee (₨)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/np.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "no",
+    "name_ko": "노르웨이",
+    "name_en": "Norway",
+    "description": {
+      "capital": "Oslo",
+      "population": 5606944,
+      "area_km2": 386224,
+      "languages": [
+        "Norwegian Nynorsk",
+        "Norwegian Bokmål",
+        "Sami"
+      ],
+      "currency": "Norwegian krone (kr)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/no.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "nf",
+    "name_ko": "노퍽 섬",
+    "name_en": "Norfolk Island",
+    "description": {
+      "capital": "Kingston",
+      "population": 2188,
+      "area_km2": 36,
+      "languages": [
+        "English",
+        "Norfuk"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Australia and New Zealand"
+    },
+    "flag_uri": "assets/flags/nf.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "nc",
+    "name_ko": "누벨칼레도니",
+    "name_en": "New Caledonia",
+    "description": {
+      "capital": "Nouméa",
+      "population": 264596,
+      "area_km2": 18575,
+      "languages": [
+        "French"
+      ],
+      "currency": "CFP franc (₣)",
+      "subregion": "Melanesia"
+    },
+    "flag_uri": "assets/flags/nc.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "nz",
+    "name_ko": "뉴질랜드",
+    "name_en": "New Zealand",
+    "description": {
+      "capital": "Wellington",
+      "population": 5324700,
+      "area_km2": 268838,
+      "languages": [
+        "English",
+        "Māori",
+        "New Zealand Sign Language"
+      ],
+      "currency": "New Zealand dollar ($)",
+      "subregion": "Australia and New Zealand"
+    },
+    "flag_uri": "assets/flags/nz.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "nu",
+    "name_ko": "니우에",
+    "name_en": "Niue",
+    "description": {
+      "capital": "Alofi",
+      "population": 1681,
+      "area_km2": 260,
+      "languages": [
+        "English",
+        "Niuean"
+      ],
+      "currency": "New Zealand dollar ($)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/nu.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "ne",
+    "name_ko": "니제르",
+    "name_en": "Niger",
+    "description": {
+      "capital": "Niamey",
+      "population": 26312034,
+      "area_km2": 1267000,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/ne.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ni",
+    "name_ko": "니카라과",
+    "name_en": "Nicaragua",
+    "description": {
+      "capital": "Managua",
+      "population": 6803886,
+      "area_km2": 130373,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Nicaraguan córdoba (C$)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/ni.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "tw",
+    "name_ko": "대만",
+    "name_en": "Taiwan",
+    "description": {
+      "capital": "Taipei",
+      "population": 23317031,
+      "area_km2": 36197,
+      "languages": [
+        "Chinese"
+      ],
+      "currency": "New Taiwan dollar ($)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/tw.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "dk",
+    "name_ko": "덴마크",
+    "name_en": "Denmark",
+    "description": {
+      "capital": "Copenhagen",
+      "population": 6011488,
+      "area_km2": 43094,
+      "languages": [
+        "Danish"
+      ],
+      "currency": "Danish krone (kr)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/dk.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "dm",
+    "name_ko": "도미니카",
+    "name_en": "Dominica",
+    "description": {
+      "capital": "Roseau",
+      "population": 67408,
+      "area_km2": 751,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/dm.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "do",
+    "name_ko": "도미니카 공화국",
+    "name_en": "Dominican Republic",
+    "description": {
+      "capital": "Santo Domingo",
+      "population": 10771504,
+      "area_km2": 48671,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Dominican peso ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/do.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "de",
+    "name_ko": "독일",
+    "name_en": "Germany",
+    "description": {
+      "capital": "Berlin",
+      "population": 83491249,
+      "area_km2": 357114,
+      "languages": [
+        "German"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/de.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "tl",
+    "name_ko": "동티모르",
+    "name_en": "Timor-Leste",
+    "description": {
+      "capital": "Dili",
+      "population": 1391221,
+      "area_km2": 14874,
+      "languages": [
+        "Portuguese",
+        "Tetum"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/tl.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "la",
+    "name_ko": "라오스",
+    "name_en": "Laos",
+    "description": {
+      "capital": "Vientiane",
+      "population": 7647000,
+      "area_km2": 236800,
+      "languages": [
+        "Lao"
+      ],
+      "currency": "Lao kip (₭)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/la.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "lr",
+    "name_ko": "라이베리아",
+    "name_en": "Liberia",
+    "description": {
+      "capital": "Monrovia",
+      "population": 5248621,
+      "area_km2": 111369,
+      "languages": [
+        "English"
+      ],
+      "currency": "Liberian dollar ($)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/lr.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "lv",
+    "name_ko": "라트비아",
+    "name_en": "Latvia",
+    "description": {
+      "capital": "Riga",
+      "population": 1829000,
+      "area_km2": 64559,
+      "languages": [
+        "Latvian"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/lv.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ru",
+    "name_ko": "러시아",
+    "name_en": "Russia",
+    "description": {
+      "capital": "Moscow",
+      "population": 146028325,
+      "area_km2": 17098246,
+      "languages": [
+        "Russian"
+      ],
+      "currency": "Russian ruble (₽)",
+      "subregion": "Eastern Europe"
+    },
+    "flag_uri": "assets/flags/ru.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "lb",
+    "name_ko": "레바논",
+    "name_en": "Lebanon",
+    "description": {
+      "capital": "Beirut",
+      "population": 5490000,
+      "area_km2": 10452,
+      "languages": [
+        "Arabic",
+        "French"
+      ],
+      "currency": "Lebanese pound (ل.ل)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/lb.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ls",
+    "name_ko": "레소토",
+    "name_en": "Lesotho",
+    "description": {
+      "capital": "Maseru",
+      "population": 2116427,
+      "area_km2": 30355,
+      "languages": [
+        "English",
+        "Sotho"
+      ],
+      "currency": "Lesotho loti (L)",
+      "subregion": "Southern Africa"
+    },
+    "flag_uri": "assets/flags/ls.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "re",
+    "name_ko": "레위니옹",
+    "name_en": "Réunion",
+    "description": {
+      "capital": "Saint-Denis",
+      "population": 896175,
+      "area_km2": 2511,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/re.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ro",
+    "name_ko": "루마니아",
+    "name_en": "Romania",
+    "description": {
+      "capital": "Bucharest",
+      "population": 19036031,
+      "area_km2": 238391,
+      "languages": [
+        "Romanian"
+      ],
+      "currency": "Romanian leu (lei)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/ro.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "lu",
+    "name_ko": "룩셈부르크",
+    "name_en": "Luxembourg",
+    "description": {
+      "capital": "Luxembourg",
+      "population": 681973,
+      "area_km2": 2586,
+      "languages": [
+        "German",
+        "French",
+        "Luxembourgish"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/lu.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "rw",
+    "name_ko": "르완다",
+    "name_en": "Rwanda",
+    "description": {
+      "capital": "Kigali",
+      "population": 14104969,
+      "area_km2": 26338,
+      "languages": [
+        "English",
+        "French",
+        "Kinyarwanda"
+      ],
+      "currency": "Rwandan franc (Fr)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/rw.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ly",
+    "name_ko": "리비아",
+    "name_en": "Libya",
+    "description": {
+      "capital": "Tripoli",
+      "population": 7459000,
+      "area_km2": 1759540,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Libyan dinar (ل.د)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/ly.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "lt",
+    "name_ko": "리투아니아",
+    "name_en": "Lithuania",
+    "description": {
+      "capital": "Vilnius",
+      "population": 2894886,
+      "area_km2": 65300,
+      "languages": [
+        "Lithuanian"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/lt.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "li",
+    "name_ko": "리히텐슈타인",
+    "name_en": "Liechtenstein",
+    "description": {
+      "capital": "Vaduz",
+      "population": 40900,
+      "area_km2": 160,
+      "languages": [
+        "German"
+      ],
+      "currency": "Swiss franc (Fr)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/li.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "mg",
+    "name_ko": "마다가스카르",
+    "name_en": "Madagascar",
+    "description": {
+      "capital": "Antananarivo",
+      "population": 31727042,
+      "area_km2": 587041,
+      "languages": [
+        "French",
+        "Malagasy"
+      ],
+      "currency": "Malagasy ariary (Ar)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/mg.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "mq",
+    "name_ko": "마르티니크",
+    "name_en": "Martinique",
+    "description": {
+      "capital": "Fort-de-France",
+      "population": 349925,
+      "area_km2": 1128,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/mq.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "mh",
+    "name_ko": "마셜 제도",
+    "name_en": "Marshall Islands",
+    "description": {
+      "capital": "Majuro",
+      "population": 42418,
+      "area_km2": 181,
+      "languages": [
+        "English",
+        "Marshallese"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/mh.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "yt",
+    "name_ko": "마요트",
+    "name_en": "Mayotte",
+    "description": {
+      "capital": "Mamoudzou",
+      "population": 320901,
+      "area_km2": 374,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/yt.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "mo",
+    "name_ko": "마카오",
+    "name_en": "Macau",
+    "description": {
+      "capital": "",
+      "population": 685900,
+      "area_km2": 30,
+      "languages": [
+        "Portuguese",
+        "Chinese"
+      ],
+      "currency": "Macanese pataca (P)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/mo.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "mw",
+    "name_ko": "말라위",
+    "name_en": "Malawi",
+    "description": {
+      "capital": "Lilongwe",
+      "population": 20734262,
+      "area_km2": 118484,
+      "languages": [
+        "English",
+        "Chewa"
+      ],
+      "currency": "Malawian kwacha (MK)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/mw.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "my",
+    "name_ko": "말레이시아",
+    "name_en": "Malaysia",
+    "description": {
+      "capital": "Kuala Lumpur",
+      "population": 34231700,
+      "area_km2": 330803,
+      "languages": [
+        "English",
+        "Malay"
+      ],
+      "currency": "Malaysian ringgit (RM)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/my.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ml",
+    "name_ko": "말리",
+    "name_en": "Mali",
+    "description": {
+      "capital": "Bamako",
+      "population": 22395489,
+      "area_km2": 1240192,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/ml.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "im",
+    "name_ko": "맨섬",
+    "name_en": "Isle of Man",
+    "description": {
+      "capital": "Douglas",
+      "population": 84530,
+      "area_km2": 572,
+      "languages": [
+        "English",
+        "Manx"
+      ],
+      "currency": "British pound (£)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/im.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "mx",
+    "name_ko": "멕시코",
+    "name_en": "Mexico",
+    "description": {
+      "capital": "Mexico City",
+      "population": 130575786,
+      "area_km2": 1964375,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Mexican peso ($)",
+      "subregion": "North America"
+    },
+    "flag_uri": "assets/flags/mx.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "mc",
+    "name_ko": "모나코",
+    "name_en": "Monaco",
+    "description": {
+      "capital": "Monaco",
+      "population": 38423,
+      "area_km2": 2.02,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/mc.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ma",
+    "name_ko": "모로코",
+    "name_en": "Morocco",
+    "description": {
+      "capital": "Rabat",
+      "population": 36828330,
+      "area_km2": 446550,
+      "languages": [
+        "Arabic",
+        "Berber"
+      ],
+      "currency": "Moroccan dirham (د.م.)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/ma.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "mu",
+    "name_ko": "모리셔스",
+    "name_en": "Mauritius",
+    "description": {
+      "capital": "Port Louis",
+      "population": 1243741,
+      "area_km2": 2040,
+      "languages": [
+        "English",
+        "French",
+        "Mauritian Creole"
+      ],
+      "currency": "Mauritian rupee (₨)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/mu.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "mr",
+    "name_ko": "모리타니",
+    "name_en": "Mauritania",
+    "description": {
+      "capital": "Nouakchott",
+      "population": 4927532,
+      "area_km2": 1030700,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Mauritanian ouguiya (UM)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/mr.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "mz",
+    "name_ko": "모잠비크",
+    "name_en": "Mozambique",
+    "description": {
+      "capital": "Maputo",
+      "population": 34090466,
+      "area_km2": 801590,
+      "languages": [
+        "Portuguese"
+      ],
+      "currency": "Mozambican metical (MT)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/mz.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "me",
+    "name_ko": "몬테네그로",
+    "name_en": "Montenegro",
+    "description": {
+      "capital": "Podgorica",
+      "population": 623327,
+      "area_km2": 13812,
+      "languages": [
+        "Montenegrin"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/me.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ms",
+    "name_ko": "몬트세랫",
+    "name_en": "Montserrat",
+    "description": {
+      "capital": "Plymouth",
+      "population": 4386,
+      "area_km2": 102,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/ms.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "md",
+    "name_ko": "몰도바",
+    "name_en": "Moldova",
+    "description": {
+      "capital": "Chișinău",
+      "population": 2749076,
+      "area_km2": 33847,
+      "languages": [
+        "Romanian"
+      ],
+      "currency": "Moldovan leu (L)",
+      "subregion": "Eastern Europe"
+    },
+    "flag_uri": "assets/flags/md.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "mv",
+    "name_ko": "몰디브",
+    "name_en": "Maldives",
+    "description": {
+      "capital": "Malé",
+      "population": 515132,
+      "area_km2": 300,
+      "languages": [
+        "Maldivian"
+      ],
+      "currency": "Maldivian rufiyaa (.ރ)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/mv.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "mt",
+    "name_ko": "몰타",
+    "name_en": "Malta",
+    "description": {
+      "capital": "Valletta",
+      "population": 574250,
+      "area_km2": 316,
+      "languages": [
+        "English",
+        "Maltese"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/mt.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "mn",
+    "name_ko": "몽골",
+    "name_en": "Mongolia",
+    "description": {
+      "capital": "Ulan Bator",
+      "population": 3544835,
+      "area_km2": 1564110,
+      "languages": [
+        "Mongolian"
+      ],
+      "currency": "Mongolian tögrög (₮)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/mn.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "us",
+    "name_ko": "미국",
+    "name_en": "United States",
+    "description": {
+      "capital": "Washington, D.C.",
+      "population": 340110988,
+      "area_km2": 9525067,
+      "languages": [
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "North America"
+    },
+    "flag_uri": "assets/flags/us.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "vi",
+    "name_ko": "미국령 버진아일랜드",
+    "name_en": "United States Virgin Islands",
+    "description": {
+      "capital": "Charlotte Amalie",
+      "population": 87146,
+      "area_km2": 347,
+      "languages": [
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/vi.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "mm",
+    "name_ko": "미얀마",
+    "name_en": "Myanmar",
+    "description": {
+      "capital": "Naypyidaw",
+      "population": 51316756,
+      "area_km2": 676578,
+      "languages": [
+        "Burmese"
+      ],
+      "currency": "Burmese kyat (Ks)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/mm.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "fm",
+    "name_ko": "미크로네시아",
+    "name_en": "Micronesia",
+    "description": {
+      "capital": "Palikir",
+      "population": 105564,
+      "area_km2": 702,
+      "languages": [
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/fm.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "vu",
+    "name_ko": "바누아투",
+    "name_en": "Vanuatu",
+    "description": {
+      "capital": "Port Vila",
+      "population": 321409,
+      "area_km2": 12189,
+      "languages": [
+        "Bislama",
+        "English",
+        "French"
+      ],
+      "currency": "Vanuatu vatu (Vt)",
+      "subregion": "Melanesia"
+    },
+    "flag_uri": "assets/flags/vu.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "bh",
+    "name_ko": "바레인",
+    "name_en": "Bahrain",
+    "description": {
+      "capital": "Manama",
+      "population": 1594654,
+      "area_km2": 765,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Bahraini dinar (.د.ب)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/bh.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "bb",
+    "name_ko": "바베이도스",
+    "name_en": "Barbados",
+    "description": {
+      "capital": "Bridgetown",
+      "population": 267800,
+      "area_km2": 430,
+      "languages": [
+        "English"
+      ],
+      "currency": "Barbadian dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/bb.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "va",
+    "name_ko": "바티칸",
+    "name_en": "Vatican City",
+    "description": {
+      "capital": "Vatican City",
+      "population": 882,
+      "area_km2": 0.49,
+      "languages": [
+        "Italian",
+        "Latin"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/va.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "bs",
+    "name_ko": "바하마",
+    "name_en": "Bahamas",
+    "description": {
+      "capital": "Nassau",
+      "population": 398165,
+      "area_km2": 13943,
+      "languages": [
+        "English"
+      ],
+      "currency": "Bahamian dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/bs.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "bd",
+    "name_ko": "방글라데시",
+    "name_en": "Bangladesh",
+    "description": {
+      "capital": "Dhaka",
+      "population": 169828911,
+      "area_km2": 147570,
+      "languages": [
+        "Bengali"
+      ],
+      "currency": "Bangladeshi taka (৳)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/bd.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "bm",
+    "name_ko": "버뮤다",
+    "name_en": "Bermuda",
+    "description": {
+      "capital": "Hamilton",
+      "population": 64055,
+      "area_km2": 54,
+      "languages": [
+        "English"
+      ],
+      "currency": "Bermudian dollar ($)",
+      "subregion": "North America"
+    },
+    "flag_uri": "assets/flags/bm.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "bj",
+    "name_ko": "베냉",
+    "name_en": "Benin",
+    "description": {
+      "capital": "Porto-Novo",
+      "population": 13224860,
+      "area_km2": 112622,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/bj.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ve",
+    "name_ko": "베네수엘라",
+    "name_en": "Venezuela",
+    "description": {
+      "capital": "Caracas",
+      "population": 28517000,
+      "area_km2": 916445,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Venezuelan bolívar soberano (Bs.S.)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/ve.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "vn",
+    "name_ko": "베트남",
+    "name_en": "Vietnam",
+    "description": {
+      "capital": "Hanoi",
+      "population": 101343800,
+      "area_km2": 331212,
+      "languages": [
+        "Vietnamese"
+      ],
+      "currency": "Vietnamese đồng (₫)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/vn.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "be",
+    "name_ko": "벨기에",
+    "name_en": "Belgium",
+    "description": {
+      "capital": "Brussels",
+      "population": 11825551,
+      "area_km2": 30528,
+      "languages": [
+        "German",
+        "French",
+        "Dutch"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/be.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "by",
+    "name_ko": "벨라루스",
+    "name_en": "Belarus",
+    "description": {
+      "capital": "Minsk",
+      "population": 9109280,
+      "area_km2": 207600,
+      "languages": [
+        "Belarusian",
+        "Russian"
+      ],
+      "currency": "Belarusian ruble (Br)",
+      "subregion": "Eastern Europe"
+    },
+    "flag_uri": "assets/flags/by.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "bz",
+    "name_ko": "벨리즈",
+    "name_en": "Belize",
+    "description": {
+      "capital": "Belmopan",
+      "population": 417634,
+      "area_km2": 22966,
+      "languages": [
+        "Belizean Creole",
+        "English",
+        "Spanish"
+      ],
+      "currency": "Belize dollar ($)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/bz.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "ba",
+    "name_ko": "보스니아 헤르체고비나",
+    "name_en": "Bosnia and Herzegovina",
+    "description": {
+      "capital": "Sarajevo",
+      "population": 3422000,
+      "area_km2": 51209,
+      "languages": [
+        "Bosnian",
+        "Croatian",
+        "Serbian"
+      ],
+      "currency": "Bosnia and Herzegovina convertible mark (KM)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/ba.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "bw",
+    "name_ko": "보츠와나",
+    "name_en": "Botswana",
+    "description": {
+      "capital": "Gaborone",
+      "population": 2359609,
+      "area_km2": 582000,
+      "languages": [
+        "English",
+        "Tswana"
+      ],
+      "currency": "Botswana pula (P)",
+      "subregion": "Southern Africa"
+    },
+    "flag_uri": "assets/flags/bw.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "bo",
+    "name_ko": "볼리비아",
+    "name_en": "Bolivia",
+    "description": {
+      "capital": "Sucre",
+      "population": 11365333,
+      "area_km2": 1098581,
+      "languages": [
+        "Aymara",
+        "Guaraní",
+        "Quechua",
+        "Spanish"
+      ],
+      "currency": "Bolivian boliviano (Bs.)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/bo.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "bi",
+    "name_ko": "부룬디",
+    "name_en": "Burundi",
+    "description": {
+      "capital": "Gitega",
+      "population": 12332788,
+      "area_km2": 27834,
+      "languages": [
+        "French",
+        "Kirundi"
+      ],
+      "currency": "Burundian franc (Fr)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/bi.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "bf",
+    "name_ko": "부르키나파소",
+    "name_en": "Burkina Faso",
+    "description": {
+      "capital": "Ouagadougou",
+      "population": 24070553,
+      "area_km2": 272967,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/bf.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "bt",
+    "name_ko": "부탄",
+    "name_en": "Bhutan",
+    "description": {
+      "capital": "Thimphu",
+      "population": 784043,
+      "area_km2": 38394,
+      "languages": [
+        "Dzongkha"
+      ],
+      "currency": "Bhutanese ngultrum (Nu.)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/bt.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "mp",
+    "name_ko": "북마리아나 제도",
+    "name_en": "Northern Mariana Islands",
+    "description": {
+      "capital": "Saipan",
+      "population": 47329,
+      "area_km2": 464,
+      "languages": [
+        "Carolinian",
+        "Chamorro",
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/mp.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "mk",
+    "name_ko": "북마케도니아",
+    "name_en": "North Macedonia",
+    "description": {
+      "capital": "Skopje",
+      "population": 1822612,
+      "area_km2": 25713,
+      "languages": [
+        "Macedonian"
+      ],
+      "currency": "denar (den)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/mk.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "bg",
+    "name_ko": "불가리아",
+    "name_en": "Bulgaria",
+    "description": {
+      "capital": "Sofia",
+      "population": 6437360,
+      "area_km2": 110879,
+      "languages": [
+        "Bulgarian"
+      ],
+      "currency": "Bulgarian lev (лв)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/bg.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "br",
+    "name_ko": "브라질",
+    "name_en": "Brazil",
+    "description": {
+      "capital": "Brasília",
+      "population": 213421037,
+      "area_km2": 8515767,
+      "languages": [
+        "Portuguese"
+      ],
+      "currency": "Brazilian real (R$)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/br.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "bn",
+    "name_ko": "브루나이",
+    "name_en": "Brunei",
+    "description": {
+      "capital": "Bandar Seri Begawan",
+      "population": 455500,
+      "area_km2": 5765,
+      "languages": [
+        "Malay"
+      ],
+      "currency": "Brunei dollar ($)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/bn.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ws",
+    "name_ko": "사모아",
+    "name_en": "Samoa",
+    "description": {
+      "capital": "Apia",
+      "population": 205557,
+      "area_km2": 2842,
+      "languages": [
+        "English",
+        "Samoan"
+      ],
+      "currency": "Samoan tālā (T)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/ws.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "sa",
+    "name_ko": "사우디아라비아",
+    "name_en": "Saudi Arabia",
+    "description": {
+      "capital": "Riyadh",
+      "population": 35300280,
+      "area_km2": 2149690,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Saudi riyal (ر.س)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/sa.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "gs",
+    "name_ko": "사우스조지아 사우스샌드위치 제도",
+    "name_en": "South Georgia",
+    "description": {
+      "capital": "King Edward Point",
+      "population": 0,
+      "area_km2": 3903,
+      "languages": [
+        "English"
+      ],
+      "currency": "British pound (£)",
+      "subregion": ""
+    },
+    "flag_uri": "assets/flags/gs.png",
+    "continent": "Antarctic"
+  },
+  {
+    "code": "sm",
+    "name_ko": "산마리노",
+    "name_en": "San Marino",
+    "description": {
+      "capital": "City of San Marino",
+      "population": 34132,
+      "area_km2": 61,
+      "languages": [
+        "Italian"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/sm.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "st",
+    "name_ko": "상투메 프린시페",
+    "name_en": "São Tomé and Príncipe",
+    "description": {
+      "capital": "São Tomé",
+      "population": 209607,
+      "area_km2": 964,
+      "languages": [
+        "Portuguese"
+      ],
+      "currency": "São Tomé and Príncipe dobra (Db)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/st.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "bl",
+    "name_ko": "생바르텔레미",
+    "name_en": "Saint Barthélemy",
+    "description": {
+      "capital": "Gustavia",
+      "population": 10562,
+      "area_km2": 21,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/bl.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "pm",
+    "name_ko": "생피에르 미클롱",
+    "name_en": "Saint Pierre and Miquelon",
+    "description": {
+      "capital": "Saint-Pierre",
+      "population": 5819,
+      "area_km2": 242,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "North America"
+    },
+    "flag_uri": "assets/flags/pm.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "eh",
+    "name_ko": "서사하라",
+    "name_en": "Western Sahara",
+    "description": {
+      "capital": "El Aaiún",
+      "population": 600904,
+      "area_km2": 266000,
+      "languages": [
+        "Berber",
+        "Hassaniya",
+        "Spanish"
+      ],
+      "currency": "Algerian dinar (دج)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/eh.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "sn",
+    "name_ko": "세네갈",
+    "name_en": "Senegal",
+    "description": {
+      "capital": "Dakar",
+      "population": 18593258,
+      "area_km2": 196722,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/sn.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "rs",
+    "name_ko": "세르비아",
+    "name_en": "Serbia",
+    "description": {
+      "capital": "Belgrade",
+      "population": 6567783,
+      "area_km2": 77589,
+      "languages": [
+        "Serbian"
+      ],
+      "currency": "Serbian dinar (дин.)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/rs.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "sc",
+    "name_ko": "세이셸",
+    "name_en": "Seychelles",
+    "description": {
+      "capital": "Victoria",
+      "population": 122729,
+      "area_km2": 452,
+      "languages": [
+        "Seychellois Creole",
+        "English",
+        "French"
+      ],
+      "currency": "Seychellois rupee (₨)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/sc.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "lc",
+    "name_ko": "세인트루시아",
+    "name_en": "Saint Lucia",
+    "description": {
+      "capital": "Castries",
+      "population": 184100,
+      "area_km2": 616,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/lc.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "vc",
+    "name_ko": "세인트빈센트 그레나딘",
+    "name_en": "Saint Vincent and the Grenadines",
+    "description": {
+      "capital": "Kingstown",
+      "population": 110872,
+      "area_km2": 389,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/vc.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "kn",
+    "name_ko": "세인트키츠 네비스",
+    "name_en": "Saint Kitts and Nevis",
+    "description": {
+      "capital": "Basseterre",
+      "population": 51320,
+      "area_km2": 261,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/kn.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "sh",
+    "name_ko": "세인트헬레나",
+    "name_en": "Saint Helena, Ascension and Tristan da Cunha",
+    "description": {
+      "capital": "Jamestown",
+      "population": 5651,
+      "area_km2": 394,
+      "languages": [
+        "English"
+      ],
+      "currency": "Pound sterling (£)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/sh.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "so",
+    "name_ko": "소말리아",
+    "name_en": "Somalia",
+    "description": {
+      "capital": "Mogadishu",
+      "population": 19655000,
+      "area_km2": 637657,
+      "languages": [
+        "Arabic",
+        "Somali"
+      ],
+      "currency": "Somali shilling (Sh)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/so.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "sb",
+    "name_ko": "솔로몬 제도",
+    "name_en": "Solomon Islands",
+    "description": {
+      "capital": "Honiara",
+      "population": 750325,
+      "area_km2": 28896,
+      "languages": [
+        "English"
+      ],
+      "currency": "Solomon Islands dollar ($)",
+      "subregion": "Melanesia"
+    },
+    "flag_uri": "assets/flags/sb.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "sd",
+    "name_ko": "수단",
+    "name_en": "Sudan",
+    "description": {
+      "capital": "Khartoum",
+      "population": 51662000,
+      "area_km2": 1886068,
+      "languages": [
+        "Arabic",
+        "English"
+      ],
+      "currency": "Sudanese pound (ج.س)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/sd.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "sr",
+    "name_ko": "수리남",
+    "name_en": "Suriname",
+    "description": {
+      "capital": "Paramaribo",
+      "population": 616500,
+      "area_km2": 163820,
+      "languages": [
+        "Dutch"
+      ],
+      "currency": "Surinamese dollar ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/sr.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "lk",
+    "name_ko": "스리랑카",
+    "name_en": "Sri Lanka",
+    "description": {
+      "capital": "Sri Jayawardenepura Kotte",
+      "population": 21763170,
+      "area_km2": 65610,
+      "languages": [
+        "Sinhala",
+        "Tamil"
+      ],
+      "currency": "Sri Lankan rupee (Rs  රු)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/lk.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "se",
+    "name_ko": "스웨덴",
+    "name_en": "Sweden",
+    "description": {
+      "capital": "Stockholm",
+      "population": 10605098,
+      "area_km2": 450295,
+      "languages": [
+        "Swedish"
+      ],
+      "currency": "Swedish krona (kr)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/se.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ch",
+    "name_ko": "스위스",
+    "name_en": "Switzerland",
+    "description": {
+      "capital": "Bern",
+      "population": 9082848,
+      "area_km2": 41284,
+      "languages": [
+        "French",
+        "Swiss German",
+        "Italian",
+        "Romansh"
+      ],
+      "currency": "Swiss franc (Fr.)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/ch.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "es",
+    "name_ko": "스페인",
+    "name_en": "Spain",
+    "description": {
+      "capital": "Madrid",
+      "population": 49315949,
+      "area_km2": 505992,
+      "languages": [
+        "Spanish",
+        "Catalan",
+        "Basque",
+        "Galician"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/es.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "sk",
+    "name_ko": "슬로바키아",
+    "name_en": "Slovakia",
+    "description": {
+      "capital": "Bratislava",
+      "population": 5413813,
+      "area_km2": 49037,
+      "languages": [
+        "Slovak"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Central Europe"
+    },
+    "flag_uri": "assets/flags/sk.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "si",
+    "name_ko": "슬로베니아",
+    "name_en": "Slovenia",
+    "description": {
+      "capital": "Ljubljana",
+      "population": 2130638,
+      "area_km2": 20273,
+      "languages": [
+        "Slovene"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Central Europe"
+    },
+    "flag_uri": "assets/flags/si.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "sy",
+    "name_ko": "시리아",
+    "name_en": "Syria",
+    "description": {
+      "capital": "Damascus",
+      "population": 25620000,
+      "area_km2": 185180,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Syrian pound (£)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/sy.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "sl",
+    "name_ko": "시에라리온",
+    "name_en": "Sierra Leone",
+    "description": {
+      "capital": "Freetown",
+      "population": 9077691,
+      "area_km2": 71740,
+      "languages": [
+        "English"
+      ],
+      "currency": "Leone (Le)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/sl.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "sx",
+    "name_ko": "신트마르턴",
+    "name_en": "Sint Maarten",
+    "description": {
+      "capital": "Philipsburg",
+      "population": 41349,
+      "area_km2": 34,
+      "languages": [
+        "English",
+        "French",
+        "Dutch"
+      ],
+      "currency": "Netherlands Antillean guilder (ƒ)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/sx.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "sg",
+    "name_ko": "싱가포르",
+    "name_en": "Singapore",
+    "description": {
+      "capital": "Singapore",
+      "population": 6110200,
+      "area_km2": 710,
+      "languages": [
+        "English",
+        "Chinese",
+        "Malay",
+        "Tamil"
+      ],
+      "currency": "Singapore dollar ($)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/sg.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ae",
+    "name_ko": "아랍에미리트",
+    "name_en": "United Arab Emirates",
+    "description": {
+      "capital": "Abu Dhabi",
+      "population": 11294243,
+      "area_km2": 83600,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "United Arab Emirates dirham (د.إ)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/ae.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "aw",
+    "name_ko": "아루바",
+    "name_en": "Aruba",
+    "description": {
+      "capital": "Oranjestad",
+      "population": 107566,
+      "area_km2": 180,
+      "languages": [
+        "Dutch",
+        "Papiamento"
+      ],
+      "currency": "Aruban florin (ƒ)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/aw.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "am",
+    "name_ko": "아르메니아",
+    "name_en": "Armenia",
+    "description": {
+      "capital": "Yerevan",
+      "population": 3076200,
+      "area_km2": 29743,
+      "languages": [
+        "Armenian"
+      ],
+      "currency": "Armenian dram (֏)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/am.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ar",
+    "name_ko": "아르헨티나",
+    "name_en": "Argentina",
+    "description": {
+      "capital": "Buenos Aires",
+      "population": 46735004,
+      "area_km2": 2780400,
+      "languages": [
+        "Guaraní",
+        "Spanish"
+      ],
+      "currency": "Argentine peso ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/ar.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "as",
+    "name_ko": "아메리칸사모아",
+    "name_en": "American Samoa",
+    "description": {
+      "capital": "Pago Pago",
+      "population": 49710,
+      "area_km2": 199,
+      "languages": [
+        "English",
+        "Samoan"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/as.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "is",
+    "name_ko": "아이슬란드",
+    "name_en": "Iceland",
+    "description": {
+      "capital": "Reykjavik",
+      "population": 391810,
+      "area_km2": 103000,
+      "languages": [
+        "Icelandic"
+      ],
+      "currency": "Icelandic króna (kr)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/is.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ht",
+    "name_ko": "아이티",
+    "name_en": "Haiti",
+    "description": {
+      "capital": "Port-au-Prince",
+      "population": 11867032,
+      "area_km2": 27750,
+      "languages": [
+        "French",
+        "Haitian Creole"
+      ],
+      "currency": "Haitian gourde (G)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/ht.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "ie",
+    "name_ko": "아일랜드",
+    "name_en": "Ireland",
+    "description": {
+      "capital": "Dublin",
+      "population": 5458600,
+      "area_km2": 70273,
+      "languages": [
+        "English",
+        "Irish"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/ie.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "az",
+    "name_ko": "아제르바이잔",
+    "name_en": "Azerbaijan",
+    "description": {
+      "capital": "Baku",
+      "population": 10241722,
+      "area_km2": 86600,
+      "languages": [
+        "Azerbaijani"
+      ],
+      "currency": "Azerbaijani manat (₼)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/az.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "af",
+    "name_ko": "아프가니스탄",
+    "name_en": "Afghanistan",
+    "description": {
+      "capital": "Kabul",
+      "population": 43844000,
+      "area_km2": 652230,
+      "languages": [
+        "Dari",
+        "Pashto",
+        "Turkmen"
+      ],
+      "currency": "Afghan afghani (؋)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/af.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ad",
+    "name_ko": "안도라",
+    "name_en": "Andorra",
+    "description": {
+      "capital": "Andorra la Vella",
+      "population": 88406,
+      "area_km2": 468,
+      "languages": [
+        "Catalan"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/ad.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "al",
+    "name_ko": "알바니아",
+    "name_en": "Albania",
+    "description": {
+      "capital": "Tirana",
+      "population": 2363314,
+      "area_km2": 28748,
+      "languages": [
+        "Albanian"
+      ],
+      "currency": "Albanian lek (L)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/al.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "dz",
+    "name_ko": "알제리",
+    "name_en": "Algeria",
+    "description": {
+      "capital": "Algiers",
+      "population": 47400000,
+      "area_km2": 2381741,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Algerian dinar (د.ج)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/dz.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ao",
+    "name_ko": "앙골라",
+    "name_en": "Angola",
+    "description": {
+      "capital": "Luanda",
+      "population": 36170961,
+      "area_km2": 1246700,
+      "languages": [
+        "Portuguese"
+      ],
+      "currency": "Angolan kwanza (Kz)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/ao.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ag",
+    "name_ko": "앤티가 바부다",
+    "name_en": "Antigua and Barbuda",
+    "description": {
+      "capital": "Saint John's",
+      "population": 103603,
+      "area_km2": 442,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/ag.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "ai",
+    "name_ko": "앵귈라",
+    "name_en": "Anguilla",
+    "description": {
+      "capital": "The Valley",
+      "population": 16010,
+      "area_km2": 91,
+      "languages": [
+        "English"
+      ],
+      "currency": "Eastern Caribbean dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/ai.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "er",
+    "name_ko": "에리트레아",
+    "name_en": "Eritrea",
+    "description": {
+      "capital": "Asmara",
+      "population": 3607000,
+      "area_km2": 117600,
+      "languages": [
+        "Arabic",
+        "English",
+        "Tigrinya"
+      ],
+      "currency": "Eritrean nakfa (Nfk)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/er.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "sz",
+    "name_ko": "에스와티니",
+    "name_en": "Eswatini",
+    "description": {
+      "capital": "Mbabane",
+      "population": 1235549,
+      "area_km2": 17364,
+      "languages": [
+        "English",
+        "Swazi"
+      ],
+      "currency": "Swazi lilangeni (L)",
+      "subregion": "Southern Africa"
+    },
+    "flag_uri": "assets/flags/sz.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ee",
+    "name_ko": "에스토니아",
+    "name_en": "Estonia",
+    "description": {
+      "capital": "Tallinn",
+      "population": 1369995,
+      "area_km2": 45227,
+      "languages": [
+        "Estonian"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/ee.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ec",
+    "name_ko": "에콰도르",
+    "name_en": "Ecuador",
+    "description": {
+      "capital": "Quito",
+      "population": 18103660,
+      "area_km2": 276841,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/ec.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "et",
+    "name_ko": "에티오피아",
+    "name_en": "Ethiopia",
+    "description": {
+      "capital": "Addis Ababa",
+      "population": 111652998,
+      "area_km2": 1104300,
+      "languages": [
+        "Amharic"
+      ],
+      "currency": "Ethiopian birr (Br)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/et.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "sv",
+    "name_ko": "엘살바도르",
+    "name_en": "El Salvador",
+    "description": {
+      "capital": "San Salvador",
+      "population": 6029976,
+      "area_km2": 21041,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/sv.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "gb",
+    "name_ko": "영국",
+    "name_en": "United Kingdom",
+    "description": {
+      "capital": "London",
+      "population": 69281437,
+      "area_km2": 244376,
+      "languages": [
+        "English"
+      ],
+      "currency": "British pound (£)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/gb.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "vg",
+    "name_ko": "영국령 버진아일랜드",
+    "name_en": "British Virgin Islands",
+    "description": {
+      "capital": "Road Town",
+      "population": 39471,
+      "area_km2": 151,
+      "languages": [
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/vg.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "io",
+    "name_ko": "영국령 인도양 지역",
+    "name_en": "British Indian Ocean Territory",
+    "description": {
+      "capital": "Diego Garcia",
+      "population": 0,
+      "area_km2": 60,
+      "languages": [
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/io.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ye",
+    "name_ko": "예멘",
+    "name_en": "Yemen",
+    "description": {
+      "capital": "Sana'a",
+      "population": 32684503,
+      "area_km2": 527968,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Yemeni rial (﷼)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/ye.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "om",
+    "name_ko": "오만",
+    "name_en": "Oman",
+    "description": {
+      "capital": "Muscat",
+      "population": 5343630,
+      "area_km2": 309500,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Omani rial (ر.ع.)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/om.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "at",
+    "name_ko": "오스트리아",
+    "name_en": "Austria",
+    "description": {
+      "capital": "Vienna",
+      "population": 9200931,
+      "area_km2": 83871,
+      "languages": [
+        "German"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Central Europe"
+    },
+    "flag_uri": "assets/flags/at.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "hn",
+    "name_ko": "온두라스",
+    "name_en": "Honduras",
+    "description": {
+      "capital": "Tegucigalpa",
+      "population": 9892632,
+      "area_km2": 112492,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Honduran lempira (L)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/hn.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "ax",
+    "name_ko": "올란드 제도",
+    "name_en": "Åland Islands",
+    "description": {
+      "capital": "Mariehamn",
+      "population": 30654,
+      "area_km2": 1580,
+      "languages": [
+        "Swedish"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/ax.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "wf",
+    "name_ko": "왈리스 푸투나",
+    "name_en": "Wallis and Futuna",
+    "description": {
+      "capital": "Mata-Utu",
+      "population": 11620,
+      "area_km2": 142,
+      "languages": [
+        "French"
+      ],
+      "currency": "CFP franc (₣)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/wf.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "jo",
+    "name_ko": "요르단",
+    "name_en": "Jordan",
+    "description": {
+      "capital": "Amman",
+      "population": 11734000,
+      "area_km2": 89342,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Jordanian dinar (د.ا)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/jo.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ug",
+    "name_ko": "우간다",
+    "name_en": "Uganda",
+    "description": {
+      "capital": "Kampala",
+      "population": 45905417,
+      "area_km2": 241550,
+      "languages": [
+        "English",
+        "Swahili"
+      ],
+      "currency": "Ugandan shilling (Sh)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/ug.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "uy",
+    "name_ko": "우루과이",
+    "name_en": "Uruguay",
+    "description": {
+      "capital": "Montevideo",
+      "population": 3499451,
+      "area_km2": 181034,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Uruguayan peso ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/uy.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "uz",
+    "name_ko": "우즈베키스탄",
+    "name_en": "Uzbekistan",
+    "description": {
+      "capital": "Tashkent",
+      "population": 37859698,
+      "area_km2": 447400,
+      "languages": [
+        "Russian",
+        "Uzbek"
+      ],
+      "currency": "Uzbekistani soʻm (so'm)",
+      "subregion": "Central Asia"
+    },
+    "flag_uri": "assets/flags/uz.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ua",
+    "name_ko": "우크라이나",
+    "name_en": "Ukraine",
+    "description": {
+      "capital": "Kyiv",
+      "population": 32862000,
+      "area_km2": 603550,
+      "languages": [
+        "Ukrainian"
+      ],
+      "currency": "Ukrainian hryvnia (₴)",
+      "subregion": "Eastern Europe"
+    },
+    "flag_uri": "assets/flags/ua.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "iq",
+    "name_ko": "이라크",
+    "name_en": "Iraq",
+    "description": {
+      "capital": "Baghdad",
+      "population": 46118793,
+      "area_km2": 438317,
+      "languages": [
+        "Arabic",
+        "Aramaic",
+        "Sorani"
+      ],
+      "currency": "Iraqi dinar (ع.د)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/iq.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ir",
+    "name_ko": "이란",
+    "name_en": "Iran",
+    "description": {
+      "capital": "Tehran",
+      "population": 85961000,
+      "area_km2": 1648195,
+      "languages": [
+        "Persian (Farsi)"
+      ],
+      "currency": "Iranian rial (﷼)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/ir.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "il",
+    "name_ko": "이스라엘",
+    "name_en": "Israel",
+    "description": {
+      "capital": "Jerusalem",
+      "population": 10134800,
+      "area_km2": 21937,
+      "languages": [
+        "Arabic",
+        "Hebrew"
+      ],
+      "currency": "Israeli new shekel (₪)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/il.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "eg",
+    "name_ko": "이집트",
+    "name_en": "Egypt",
+    "description": {
+      "capital": "Cairo",
+      "population": 107271260,
+      "area_km2": 1002450,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Egyptian pound (£)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/eg.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "it",
+    "name_ko": "이탈리아",
+    "name_en": "Italy",
+    "description": {
+      "capital": "Rome",
+      "population": 58927633,
+      "area_km2": 301336,
+      "languages": [
+        "Italian",
+        "Catalan"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/it.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "in",
+    "name_ko": "인도",
+    "name_en": "India",
+    "description": {
+      "capital": "New Delhi",
+      "population": 1417492000,
+      "area_km2": 3287263,
+      "languages": [
+        "English",
+        "Hindi",
+        "Tamil"
+      ],
+      "currency": "Indian rupee (₹)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/in.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "id",
+    "name_ko": "인도네시아",
+    "name_en": "Indonesia",
+    "description": {
+      "capital": "Jakarta",
+      "population": 284438782,
+      "area_km2": 1904569,
+      "languages": [
+        "Indonesian"
+      ],
+      "currency": "Indonesian rupiah (Rp)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/id.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "jp",
+    "name_ko": "일본",
+    "name_en": "Japan",
+    "description": {
+      "capital": "Tokyo",
+      "population": 123210000,
+      "area_km2": 377930,
+      "languages": [
+        "Japanese"
+      ],
+      "currency": "Japanese yen (¥)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/jp.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "jm",
+    "name_ko": "자메이카",
+    "name_en": "Jamaica",
+    "description": {
+      "capital": "Kingston",
+      "population": 2825544,
+      "area_km2": 10991,
+      "languages": [
+        "English",
+        "Jamaican Patois"
+      ],
+      "currency": "Jamaican dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/jm.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "zm",
+    "name_ko": "잠비아",
+    "name_en": "Zambia",
+    "description": {
+      "capital": "Lusaka",
+      "population": 19693423,
+      "area_km2": 752612,
+      "languages": [
+        "English"
+      ],
+      "currency": "Zambian kwacha (ZK)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/zm.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "je",
+    "name_ko": "저지 섬",
+    "name_en": "Jersey",
+    "description": {
+      "capital": "Saint Helier",
+      "population": 103267,
+      "area_km2": 116,
+      "languages": [
+        "English",
+        "French",
+        "Jèrriais"
+      ],
+      "currency": "British pound (£)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/je.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "gq",
+    "name_ko": "적도 기니",
+    "name_en": "Equatorial Guinea",
+    "description": {
+      "capital": "Malabo",
+      "population": 1668768,
+      "area_km2": 28051,
+      "languages": [
+        "French",
+        "Portuguese",
+        "Spanish"
+      ],
+      "currency": "Central African CFA franc (Fr)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/gq.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "kp",
+    "name_ko": "북한",
+    "name_en": "North Korea",
+    "description": {
+      "capital": "Pyongyang",
+      "population": 25950000,
+      "area_km2": 120538,
+      "languages": [
+        "Korean"
+      ],
+      "currency": "North Korean won (₩)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/kp.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ge",
+    "name_ko": "조지아",
+    "name_en": "Georgia",
+    "description": {
+      "capital": "Tbilisi",
+      "population": 4000921,
+      "area_km2": 69700,
+      "languages": [
+        "Georgian"
+      ],
+      "currency": "lari (₾)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/ge.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "cn",
+    "name_ko": "중국",
+    "name_en": "China",
+    "description": {
+      "capital": "Beijing",
+      "population": 1408280000,
+      "area_km2": 9706961,
+      "languages": [
+        "Chinese"
+      ],
+      "currency": "Chinese yuan (¥)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/cn.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "cf",
+    "name_ko": "중앙아프리카 공화국",
+    "name_en": "Central African Republic",
+    "description": {
+      "capital": "Bangui",
+      "population": 6470307,
+      "area_km2": 622984,
+      "languages": [
+        "French",
+        "Sango"
+      ],
+      "currency": "Central African CFA franc (Fr)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/cf.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "dj",
+    "name_ko": "지부티",
+    "name_en": "Djibouti",
+    "description": {
+      "capital": "Djibouti",
+      "population": 1066809,
+      "area_km2": 23200,
+      "languages": [
+        "Arabic",
+        "French"
+      ],
+      "currency": "Djiboutian franc (Fr)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/dj.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "gi",
+    "name_ko": "지브롤터",
+    "name_en": "Gibraltar",
+    "description": {
+      "capital": "Gibraltar",
+      "population": 38000,
+      "area_km2": 6,
+      "languages": [
+        "English"
+      ],
+      "currency": "Gibraltar pound (£)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/gi.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "zw",
+    "name_ko": "짐바브웨",
+    "name_en": "Zimbabwe",
+    "description": {
+      "capital": "Harare",
+      "population": 17073087,
+      "area_km2": 390757,
+      "languages": [
+        "Chibarwe",
+        "English",
+        "Kalanga",
+        "Khoisan",
+        "Ndau",
+        "Northern Ndebele",
+        "Chewa",
+        "Shona",
+        "Sotho",
+        "Tonga",
+        "Tswana",
+        "Tsonga",
+        "Venda",
+        "Xhosa",
+        "Zimbabwean Sign Language"
+      ],
+      "currency": "Zimbabwean dollar ($)",
+      "subregion": "Southern Africa"
+    },
+    "flag_uri": "assets/flags/zw.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "td",
+    "name_ko": "차드",
+    "name_en": "Chad",
+    "description": {
+      "capital": "N'Djamena",
+      "population": 19340757,
+      "area_km2": 1284000,
+      "languages": [
+        "Arabic",
+        "French"
+      ],
+      "currency": "Central African CFA franc (Fr)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/td.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "cz",
+    "name_ko": "체코",
+    "name_en": "Czechia",
+    "description": {
+      "capital": "Prague",
+      "population": 10882341,
+      "area_km2": 78865,
+      "languages": [
+        "Czech",
+        "Slovak"
+      ],
+      "currency": "Czech koruna (Kč)",
+      "subregion": "Central Europe"
+    },
+    "flag_uri": "assets/flags/cz.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "cl",
+    "name_ko": "칠레",
+    "name_en": "Chile",
+    "description": {
+      "capital": "Santiago",
+      "population": 20206953,
+      "area_km2": 756102,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Chilean peso ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/cl.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "bq",
+    "name_ko": "카리브 네덜란드",
+    "name_en": "Caribbean Netherlands",
+    "description": {
+      "capital": "Kralendijk",
+      "population": 31980,
+      "area_km2": 328,
+      "languages": [
+        "English",
+        "Dutch",
+        "Papiamento"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/bq.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "cm",
+    "name_ko": "카메룬",
+    "name_en": "Cameroon",
+    "description": {
+      "capital": "Yaoundé",
+      "population": 29442327,
+      "area_km2": 475442,
+      "languages": [
+        "English",
+        "French"
+      ],
+      "currency": "Central African CFA franc (Fr)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/cm.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "cv",
+    "name_ko": "카보베르데",
+    "name_en": "Cape Verde",
+    "description": {
+      "capital": "Praia",
+      "population": 491233,
+      "area_km2": 4033,
+      "languages": [
+        "Portuguese"
+      ],
+      "currency": "Cape Verdean escudo (Esc)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/cv.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "kz",
+    "name_ko": "카자흐스탄",
+    "name_en": "Kazakhstan",
+    "description": {
+      "capital": "Astana",
+      "population": 20426568,
+      "area_km2": 2724900,
+      "languages": [
+        "Kazakh",
+        "Russian"
+      ],
+      "currency": "Kazakhstani tenge (₸)",
+      "subregion": "Central Asia"
+    },
+    "flag_uri": "assets/flags/kz.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "qa",
+    "name_ko": "카타르",
+    "name_en": "Qatar",
+    "description": {
+      "capital": "Doha",
+      "population": 3173024,
+      "area_km2": 11586,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Qatari riyal (ر.ق)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/qa.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "kh",
+    "name_ko": "캄보디아",
+    "name_en": "Cambodia",
+    "description": {
+      "capital": "Phnom Penh",
+      "population": 17577760,
+      "area_km2": 181035,
+      "languages": [
+        "Khmer"
+      ],
+      "currency": "Cambodian riel (៛)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/kh.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ca",
+    "name_ko": "캐나다",
+    "name_en": "Canada",
+    "description": {
+      "capital": "Ottawa",
+      "population": 41651653,
+      "area_km2": 9984670,
+      "languages": [
+        "English",
+        "French"
+      ],
+      "currency": "Canadian dollar ($)",
+      "subregion": "North America"
+    },
+    "flag_uri": "assets/flags/ca.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "ke",
+    "name_ko": "케냐",
+    "name_en": "Kenya",
+    "description": {
+      "capital": "Nairobi",
+      "population": 53330978,
+      "area_km2": 580367,
+      "languages": [
+        "English",
+        "Swahili"
+      ],
+      "currency": "Kenyan shilling (Sh)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/ke.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "ky",
+    "name_ko": "케이맨 제도",
+    "name_en": "Cayman Islands",
+    "description": {
+      "capital": "George Town",
+      "population": 84738,
+      "area_km2": 264,
+      "languages": [
+        "English"
+      ],
+      "currency": "Cayman Islands dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/ky.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "km",
+    "name_ko": "코모로",
+    "name_en": "Comoros",
+    "description": {
+      "capital": "Moroni",
+      "population": 919901,
+      "area_km2": 1862,
+      "languages": [
+        "Arabic",
+        "French",
+        "Comorian"
+      ],
+      "currency": "Comorian franc (Fr)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/km.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "xk",
+    "name_ko": "코소보",
+    "name_en": "Kosovo",
+    "description": {
+      "capital": "Pristina",
+      "population": 1585566,
+      "area_km2": 10908,
+      "languages": [
+        "Albanian",
+        "Serbian"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/xk.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "cr",
+    "name_ko": "코스타리카",
+    "name_en": "Costa Rica",
+    "description": {
+      "capital": "San José",
+      "population": 5309625,
+      "area_km2": 51100,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Costa Rican colón (₡)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/cr.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "cc",
+    "name_ko": "코코스 제도",
+    "name_en": "Cocos (Keeling) Islands",
+    "description": {
+      "capital": "West Island",
+      "population": 593,
+      "area_km2": 14,
+      "languages": [
+        "English"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Australia and New Zealand"
+    },
+    "flag_uri": "assets/flags/cc.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "ci",
+    "name_ko": "코트디부아르",
+    "name_en": "Ivory Coast",
+    "description": {
+      "capital": "Yamoussoukro",
+      "population": 31719275,
+      "area_km2": 322463,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/ci.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "co",
+    "name_ko": "콜롬비아",
+    "name_en": "Colombia",
+    "description": {
+      "capital": "Bogotá",
+      "population": 53057212,
+      "area_km2": 1141748,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Colombian peso ($)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/co.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "cg",
+    "name_ko": "콩고",
+    "name_en": "Republic of the Congo",
+    "description": {
+      "capital": "Brazzaville",
+      "population": 6142180,
+      "area_km2": 342000,
+      "languages": [
+        "French",
+        "Kikongo",
+        "Lingala"
+      ],
+      "currency": "Central African CFA franc (Fr)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/cg.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "cd",
+    "name_ko": "콩고 민주 공화국",
+    "name_en": "DR Congo",
+    "description": {
+      "capital": "Kinshasa",
+      "population": 112832000,
+      "area_km2": 2344858,
+      "languages": [
+        "French",
+        "Kikongo",
+        "Lingala",
+        "Tshiluba",
+        "Swahili"
+      ],
+      "currency": "Congolese franc (FC)",
+      "subregion": "Middle Africa"
+    },
+    "flag_uri": "assets/flags/cd.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "cu",
+    "name_ko": "쿠바",
+    "name_en": "Cuba",
+    "description": {
+      "capital": "Havana",
+      "population": 9748007,
+      "area_km2": 109884,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Cuban convertible peso ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/cu.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "kw",
+    "name_ko": "쿠웨이트",
+    "name_en": "Kuwait",
+    "description": {
+      "capital": "Kuwait City",
+      "population": 4881254,
+      "area_km2": 17818,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Kuwaiti dinar (د.ك)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/kw.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ck",
+    "name_ko": "쿡 제도",
+    "name_en": "Cook Islands",
+    "description": {
+      "capital": "Avarua",
+      "population": 15040,
+      "area_km2": 236,
+      "languages": [
+        "English",
+        "Cook Islands Māori"
+      ],
+      "currency": "Cook Islands dollar ($)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/ck.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "cw",
+    "name_ko": "퀴라소",
+    "name_en": "Curaçao",
+    "description": {
+      "capital": "Willemstad",
+      "population": 156115,
+      "area_km2": 444,
+      "languages": [
+        "English",
+        "Dutch",
+        "Papiamento"
+      ],
+      "currency": "Netherlands Antillean guilder (ƒ)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/cw.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "hr",
+    "name_ko": "크로아티아",
+    "name_en": "Croatia",
+    "description": {
+      "capital": "Zagreb",
+      "population": 3866233,
+      "area_km2": 56594,
+      "languages": [
+        "Croatian"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southeast Europe"
+    },
+    "flag_uri": "assets/flags/hr.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "cx",
+    "name_ko": "크리스마스 섬",
+    "name_en": "Christmas Island",
+    "description": {
+      "capital": "Flying Fish Cove",
+      "population": 1692,
+      "area_km2": 135,
+      "languages": [
+        "English"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Australia and New Zealand"
+    },
+    "flag_uri": "assets/flags/cx.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "kg",
+    "name_ko": "키르기스스탄",
+    "name_en": "Kyrgyzstan",
+    "description": {
+      "capital": "Bishkek",
+      "population": 7281800,
+      "area_km2": 199951,
+      "languages": [
+        "Kyrgyz",
+        "Russian"
+      ],
+      "currency": "Kyrgyzstani som (с)",
+      "subregion": "Central Asia"
+    },
+    "flag_uri": "assets/flags/kg.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "ki",
+    "name_ko": "키리바시",
+    "name_en": "Kiribati",
+    "description": {
+      "capital": "South Tarawa",
+      "population": 120740,
+      "area_km2": 811,
+      "languages": [
+        "English",
+        "Gilbertese"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/ki.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "cy",
+    "name_ko": "키프로스",
+    "name_en": "Cyprus",
+    "description": {
+      "capital": "Nicosia",
+      "population": 1442614,
+      "area_km2": 9251,
+      "languages": [
+        "Greek",
+        "Turkish"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/cy.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "tj",
+    "name_ko": "타지키스탄",
+    "name_en": "Tajikistan",
+    "description": {
+      "capital": "Dushanbe",
+      "population": 10499000,
+      "area_km2": 143100,
+      "languages": [
+        "Russian",
+        "Tajik"
+      ],
+      "currency": "Tajikistani somoni (ЅМ)",
+      "subregion": "Central Asia"
+    },
+    "flag_uri": "assets/flags/tj.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "tz",
+    "name_ko": "탄자니아",
+    "name_en": "Tanzania",
+    "description": {
+      "capital": "Dodoma",
+      "population": 68153004,
+      "area_km2": 947303,
+      "languages": [
+        "English",
+        "Swahili"
+      ],
+      "currency": "Tanzanian shilling (Sh)",
+      "subregion": "Eastern Africa"
+    },
+    "flag_uri": "assets/flags/tz.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "th",
+    "name_ko": "태국",
+    "name_en": "Thailand",
+    "description": {
+      "capital": "Bangkok",
+      "population": 65859640,
+      "area_km2": 513120,
+      "languages": [
+        "Thai"
+      ],
+      "currency": "Thai baht (฿)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/th.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "tc",
+    "name_ko": "터크스 케이커스 제도",
+    "name_en": "Turks and Caicos Islands",
+    "description": {
+      "capital": "Cockburn Town",
+      "population": 50828,
+      "area_km2": 948,
+      "languages": [
+        "English"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/tc.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "tr",
+    "name_ko": "터키",
+    "name_en": "Turkey",
+    "description": {
+      "capital": "Ankara",
+      "population": 85664944,
+      "area_km2": 783562,
+      "languages": [
+        "Turkish"
+      ],
+      "currency": "Turkish lira (₺)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/tr.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "tg",
+    "name_ko": "토고",
+    "name_en": "Togo",
+    "description": {
+      "capital": "Lomé",
+      "population": 8095498,
+      "area_km2": 56785,
+      "languages": [
+        "French"
+      ],
+      "currency": "West African CFA franc (Fr)",
+      "subregion": "Western Africa"
+    },
+    "flag_uri": "assets/flags/tg.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "tk",
+    "name_ko": "토켈라우",
+    "name_en": "Tokelau",
+    "description": {
+      "capital": "Fakaofo",
+      "population": 2608,
+      "area_km2": 12,
+      "languages": [
+        "English",
+        "Samoan",
+        "Tokelauan"
+      ],
+      "currency": "New Zealand dollar ($)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/tk.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "to",
+    "name_ko": "통가",
+    "name_en": "Tonga",
+    "description": {
+      "capital": "Nuku'alofa",
+      "population": 100179,
+      "area_km2": 747,
+      "languages": [
+        "English",
+        "Tongan"
+      ],
+      "currency": "Tongan paʻanga (T$)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/to.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "tm",
+    "name_ko": "투르크메니스탄",
+    "name_en": "Turkmenistan",
+    "description": {
+      "capital": "Ashgabat",
+      "population": 7057841,
+      "area_km2": 488100,
+      "languages": [
+        "Russian",
+        "Turkmen"
+      ],
+      "currency": "Turkmenistan manat (m)",
+      "subregion": "Central Asia"
+    },
+    "flag_uri": "assets/flags/tm.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "tv",
+    "name_ko": "투발루",
+    "name_en": "Tuvalu",
+    "description": {
+      "capital": "Funafuti",
+      "population": 10643,
+      "area_km2": 26,
+      "languages": [
+        "English",
+        "Tuvaluan"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/tv.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "tn",
+    "name_ko": "튀니지",
+    "name_en": "Tunisia",
+    "description": {
+      "capital": "Tunis",
+      "population": 11972169,
+      "area_km2": 163610,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Tunisian dinar (د.ت)",
+      "subregion": "Northern Africa"
+    },
+    "flag_uri": "assets/flags/tn.png",
+    "continent": "Africa"
+  },
+  {
+    "code": "tt",
+    "name_ko": "트리니다드 토바고",
+    "name_en": "Trinidad and Tobago",
+    "description": {
+      "capital": "Port of Spain",
+      "population": 1367764,
+      "area_km2": 5130,
+      "languages": [
+        "English"
+      ],
+      "currency": "Trinidad and Tobago dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/tt.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "pa",
+    "name_ko": "파나마",
+    "name_en": "Panama",
+    "description": {
+      "capital": "Panama City",
+      "population": 4064780,
+      "area_km2": 75417,
+      "languages": [
+        "Spanish"
+      ],
+      "currency": "Panamanian balboa (B/.)",
+      "subregion": "Central America"
+    },
+    "flag_uri": "assets/flags/pa.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "py",
+    "name_ko": "파라과이",
+    "name_en": "Paraguay",
+    "description": {
+      "capital": "Asunción",
+      "population": 6109644,
+      "area_km2": 406752,
+      "languages": [
+        "Guaraní",
+        "Spanish"
+      ],
+      "currency": "Paraguayan guaraní (₲)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/py.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "pk",
+    "name_ko": "파키스탄",
+    "name_en": "Pakistan",
+    "description": {
+      "capital": "Islamabad",
+      "population": 241499431,
+      "area_km2": 796095,
+      "languages": [
+        "English",
+        "Urdu"
+      ],
+      "currency": "Pakistani rupee (₨)",
+      "subregion": "Southern Asia"
+    },
+    "flag_uri": "assets/flags/pk.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "pg",
+    "name_ko": "파푸아뉴기니",
+    "name_en": "Papua New Guinea",
+    "description": {
+      "capital": "Port Moresby",
+      "population": 11781559,
+      "area_km2": 462840,
+      "languages": [
+        "English",
+        "Hiri Motu",
+        "Tok Pisin"
+      ],
+      "currency": "Papua New Guinean kina (K)",
+      "subregion": "Melanesia"
+    },
+    "flag_uri": "assets/flags/pg.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "pw",
+    "name_ko": "팔라우",
+    "name_en": "Palau",
+    "description": {
+      "capital": "Ngerulmud",
+      "population": 16733,
+      "area_km2": 459,
+      "languages": [
+        "English",
+        "Palauan"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Micronesia"
+    },
+    "flag_uri": "assets/flags/pw.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "ps",
+    "name_ko": "팔레스타인",
+    "name_en": "Palestine",
+    "description": {
+      "capital": "Ramallah",
+      "population": 5483450,
+      "area_km2": 6220,
+      "languages": [
+        "Arabic"
+      ],
+      "currency": "Egyptian pound (E£)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/ps.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "fo",
+    "name_ko": "페로 제도",
+    "name_en": "Faroe Islands",
+    "description": {
+      "capital": "Tórshavn",
+      "population": 54885,
+      "area_km2": 1393,
+      "languages": [
+        "Danish",
+        "Faroese"
+      ],
+      "currency": "Danish krone (kr)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/fo.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "pe",
+    "name_ko": "페루",
+    "name_en": "Peru",
+    "description": {
+      "capital": "Lima",
+      "population": 34350244,
+      "area_km2": 1285216,
+      "languages": [
+        "Aymara",
+        "Quechua",
+        "Spanish"
+      ],
+      "currency": "Peruvian sol (S/ )",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/pe.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "pt",
+    "name_ko": "포르투갈",
+    "name_en": "Portugal",
+    "description": {
+      "capital": "Lisbon",
+      "population": 10749635,
+      "area_km2": 92090,
+      "languages": [
+        "Portuguese"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Southern Europe"
+    },
+    "flag_uri": "assets/flags/pt.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "fk",
+    "name_ko": "포클랜드 제도",
+    "name_en": "Falkland Islands",
+    "description": {
+      "capital": "Stanley",
+      "population": 3662,
+      "area_km2": 12173,
+      "languages": [
+        "English"
+      ],
+      "currency": "Falkland Islands pound (£)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/fk.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "pl",
+    "name_ko": "폴란드",
+    "name_en": "Poland",
+    "description": {
+      "capital": "Warsaw",
+      "population": 37392000,
+      "area_km2": 312679,
+      "languages": [
+        "Polish"
+      ],
+      "currency": "Polish złoty (zł)",
+      "subregion": "Central Europe"
+    },
+    "flag_uri": "assets/flags/pl.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "pr",
+    "name_ko": "푸에르토리코",
+    "name_en": "Puerto Rico",
+    "description": {
+      "capital": "San Juan",
+      "population": 3203295,
+      "area_km2": 8870,
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "currency": "United States dollar ($)",
+      "subregion": "Caribbean"
+    },
+    "flag_uri": "assets/flags/pr.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "fr",
+    "name_ko": "프랑스",
+    "name_en": "France",
+    "description": {
+      "capital": "Paris",
+      "population": 66351959,
+      "area_km2": 543908,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Western Europe"
+    },
+    "flag_uri": "assets/flags/fr.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "gf",
+    "name_ko": "프랑스령 기아나",
+    "name_en": "French Guiana",
+    "description": {
+      "capital": "Cayenne",
+      "population": 292354,
+      "area_km2": 83534,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": "South America"
+    },
+    "flag_uri": "assets/flags/gf.png",
+    "continent": "Americas"
+  },
+  {
+    "code": "tf",
+    "name_ko": "프랑스령 남부와 남극 지역",
+    "name_en": "French Southern and Antarctic Lands",
+    "description": {
+      "capital": "Port-aux-Français",
+      "population": 400,
+      "area_km2": 7747,
+      "languages": [
+        "French"
+      ],
+      "currency": "euro (€)",
+      "subregion": ""
+    },
+    "flag_uri": "assets/flags/tf.png",
+    "continent": "Antarctic"
+  },
+  {
+    "code": "pf",
+    "name_ko": "프랑스령 폴리네시아",
+    "name_en": "French Polynesia",
+    "description": {
+      "capital": "Papeetē",
+      "population": 279500,
+      "area_km2": 4167,
+      "languages": [
+        "French"
+      ],
+      "currency": "CFP franc (₣)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/pf.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "fj",
+    "name_ko": "피지",
+    "name_en": "Fiji",
+    "description": {
+      "capital": "Suva",
+      "population": 900869,
+      "area_km2": 18272,
+      "languages": [
+        "English",
+        "Fijian",
+        "Fiji Hindi"
+      ],
+      "currency": "Fijian dollar ($)",
+      "subregion": "Melanesia"
+    },
+    "flag_uri": "assets/flags/fj.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "fi",
+    "name_ko": "핀란드",
+    "name_en": "Finland",
+    "description": {
+      "capital": "Helsinki",
+      "population": 5650325,
+      "area_km2": 338455,
+      "languages": [
+        "Finnish",
+        "Swedish"
+      ],
+      "currency": "euro (€)",
+      "subregion": "Northern Europe"
+    },
+    "flag_uri": "assets/flags/fi.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "ph",
+    "name_ko": "필리핀",
+    "name_en": "Philippines",
+    "description": {
+      "capital": "Manila",
+      "population": 114123600,
+      "area_km2": 342353,
+      "languages": [
+        "English",
+        "Filipino"
+      ],
+      "currency": "Philippine peso (₱)",
+      "subregion": "South-Eastern Asia"
+    },
+    "flag_uri": "assets/flags/ph.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "pn",
+    "name_ko": "핏케언 제도",
+    "name_en": "Pitcairn Islands",
+    "description": {
+      "capital": "Adamstown",
+      "population": 35,
+      "area_km2": 47,
+      "languages": [
+        "English"
+      ],
+      "currency": "New Zealand dollar ($)",
+      "subregion": "Polynesia"
+    },
+    "flag_uri": "assets/flags/pn.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "kr",
+    "name_ko": "한국",
+    "name_en": "South Korea",
+    "description": {
+      "capital": "Seoul",
+      "population": 51159889,
+      "area_km2": 100210,
+      "languages": [
+        "Korean"
+      ],
+      "currency": "South Korean won (₩)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/kr.png",
+    "continent": "Asia"
+  },
+  {
+    "code": "hm",
+    "name_ko": "허드 맥도널드 제도",
+    "name_en": "Heard Island and McDonald Islands",
+    "description": {
+      "capital": "",
+      "population": 0,
+      "area_km2": 412,
+      "languages": [
+        "English"
+      ],
+      "currency": "",
+      "subregion": ""
+    },
+    "flag_uri": "assets/flags/hm.png",
+    "continent": "Antarctic"
+  },
+  {
+    "code": "hu",
+    "name_ko": "헝가리",
+    "name_en": "Hungary",
+    "description": {
+      "capital": "Budapest",
+      "population": 9539502,
+      "area_km2": 93028,
+      "languages": [
+        "Hungarian"
+      ],
+      "currency": "Hungarian forint (Ft)",
+      "subregion": "Central Europe"
+    },
+    "flag_uri": "assets/flags/hu.png",
+    "continent": "Europe"
+  },
+  {
+    "code": "au",
+    "name_ko": "호주",
+    "name_en": "Australia",
+    "description": {
+      "capital": "Canberra",
+      "population": 27536874,
+      "area_km2": 7692024,
+      "languages": [
+        "English"
+      ],
+      "currency": "Australian dollar ($)",
+      "subregion": "Australia and New Zealand"
+    },
+    "flag_uri": "assets/flags/au.png",
+    "continent": "Oceania"
+  },
+  {
+    "code": "hk",
+    "name_ko": "홍콩",
+    "name_en": "Hong Kong",
+    "description": {
+      "capital": "City of Victoria",
+      "population": 7527500,
+      "area_km2": 1104,
+      "languages": [
+        "English",
+        "Chinese"
+      ],
+      "currency": "Hong Kong dollar ($)",
+      "subregion": "Eastern Asia"
+    },
+    "flag_uri": "assets/flags/hk.png",
+    "continent": "Asia"
+  }
+]

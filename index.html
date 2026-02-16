@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>국기 퀴즈 - Flag Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-from: #FFECD2;
+      --bg-to: #FCB69F;
+      --accent: #FF6B6B;
+      --text: #2D3436;
+      --card: rgba(255,255,255,0.95);
+      --success: #51CF66;
+      --error: #FF6B6B;
+      --shadow: 0 6px 24px rgba(0,0,0,0.1);
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Nunito', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+      transition: background 0.8s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ===== Screens ===== */
+    .screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s ease;
+    }
+
+    .screen.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ===== Confetti Canvas ===== */
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    /* ===== Start Screen ===== */
+    .start-content {
+      text-align: center;
+      width: 100%;
+      max-width: 540px;
+      padding: 20px 24px;
+    }
+
+    .title {
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      animation: bounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .subtitle {
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      font-weight: 700;
+      opacity: 0.7;
+      margin-top: 4px;
+      animation: fadeInUp 0.6s 0.3s ease both;
+    }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: clamp(16px, 3vh, 32px);
+      animation: fadeInUp 0.6s 0.5s ease both;
+    }
+
+    .mode-btn {
+      background: linear-gradient(135deg, var(--m-from), var(--m-to));
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px 8px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mode-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.2s;
+    }
+
+    .mode-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    }
+
+    .mode-btn:hover::after { background: rgba(255,255,255,0.08); }
+
+    .mode-btn:active {
+      transform: translateY(0) scale(0.97);
+    }
+
+    .mode-btn .emoji { font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.2; }
+    .mode-btn .label-ko { font-size: clamp(0.85rem, 2vw, 1rem); font-weight: 800; }
+    .mode-btn .label-en { font-size: clamp(0.65rem, 1.5vw, 0.75rem); font-weight: 600; opacity: 0.8; }
+    .mode-btn .count { font-size: clamp(0.6rem, 1.3vw, 0.7rem); font-weight: 600; opacity: 0.65; margin-top: 2px; }
+
+    .mode-all {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      gap: 12px;
+      padding: 16px 20px;
+      justify-content: center;
+    }
+
+    .mode-all .emoji { font-size: 1.6rem; }
+    .mode-all .mode-all-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .mode-all .label-ko { font-size: 1rem; }
+
+    /* ===== Game Screen ===== */
+    #screen-game {
+      justify-content: stretch;
+      align-items: stretch;
+    }
+
+    .game-header {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px 8px;
+      width: 100%;
+    }
+
+    .btn-back {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-back:hover { transform: scale(1.08); }
+    .btn-back:active { transform: scale(0.95); }
+
+    .progress-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(0,0,0,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+      transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 0%;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .score-display {
+      font-size: 0.95rem;
+      font-weight: 800;
+      background: var(--card);
+      padding: 6px 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      white-space: nowrap;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .score-display.bump {
+      transform: scale(1.15);
+    }
+
+    .hint-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      flex-shrink: 0;
+    }
+
+    .hint-toggle.off {
+      background: var(--card);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .hint-toggle.on {
+      background: #FFF3BF;
+      box-shadow: 0 2px 12px rgba(255, 200, 0, 0.3);
+    }
+
+    .hint-toggle:hover { transform: scale(1.08); }
+
+    /* ===== Game Main ===== */
+    .game-main {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 20px 16px;
+      overflow: hidden;
+      min-height: 0;
+      gap: clamp(20px, 3vh, 36px);
+    }
+
+    .flag-area {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 20px;
+      max-width: 100%;
+    }
+
+    .flag-area.with-hints {
+      gap: 24px;
+    }
+
+    .flag-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: clamp(8px, 2vw, 16px);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, opacity 0.3s;
+      flex-shrink: 0;
+    }
+
+    .flag-img {
+      display: block;
+      max-width: min(320px, 55vw);
+      max-height: 32vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .flag-area.with-hints .flag-img {
+      max-width: min(280px, 40vw);
+      max-height: 28vh;
+    }
+
+    .flag-enter {
+      animation: flagEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .flag-card.flag-correct {
+      box-shadow: 0 0 0 5px var(--success), 0 0 40px rgba(81,207,102,0.35);
+      animation: flagCelebrate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .flag-card.flag-wrong {
+      box-shadow: 0 0 0 5px var(--error), 0 0 30px rgba(255,107,107,0.3);
+      animation: flagShake 0.55s ease;
+    }
+
+    .desc-panel {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+      display: none;
+      max-width: 260px;
+      flex-shrink: 0;
+      animation: fadeInUp 0.4s ease both;
+    }
+
+    .desc-panel.visible { display: block; }
+
+    .desc-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+      font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+    }
+
+    .desc-row + .desc-row { border-top: 1px solid rgba(0,0,0,0.04); padding-top: 4px; }
+    .desc-icon { font-size: 1rem; flex-shrink: 0; width: 20px; text-align: center; }
+    .desc-label { font-weight: 800; color: #888; min-width: 28px; flex-shrink: 0; }
+    .desc-value { font-weight: 700; color: var(--text); word-break: break-word; }
+
+    /* ===== Answer Grid ===== */
+    .answer-grid {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 640px;
+      flex-shrink: 0;
+    }
+
+    .answer-btn {
+      width: 100%;
+      flex: 1;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 2px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      transition: transform 0.2s, background 0.3s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: btnEnter 0.4s ease forwards;
+    }
+
+    .answer-btn:nth-child(1) { animation-delay: 0.08s; }
+    .answer-btn:nth-child(2) { animation-delay: 0.16s; }
+    .answer-btn:nth-child(3) { animation-delay: 0.24s; }
+
+    .answer-btn:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .answer-btn:active:not(:disabled) {
+      transform: scale(0.97);
+    }
+
+    .answer-btn:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    .btn-name-ko {
+      font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .btn-name-en {
+      font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+      font-weight: 600;
+      opacity: 0.5;
+      line-height: 1.2;
+    }
+
+    .answer-btn.correct {
+      background: var(--success) !important;
+      color: #fff;
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(81,207,102,0.4);
+    }
+
+    .answer-btn.correct .btn-name-en { opacity: 0.85; }
+
+    .answer-btn.wrong {
+      background: var(--error) !important;
+      color: #fff;
+      animation: shake 0.5s ease;
+    }
+
+    .answer-btn.wrong .btn-name-en { opacity: 0.85; }
+
+    .btn-flag {
+      width: clamp(36px, 8vw, 48px);
+      height: auto;
+      object-fit: contain;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.3);
+      position: absolute;
+      top: 6px;
+      right: 8px;
+    }
+
+    /* ===== Feedback Toast ===== */
+    .feedback {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 900;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .feedback.show { opacity: 1; }
+
+    .feedback-content {
+      text-align: center;
+      border-radius: 24px;
+      padding: 18px 36px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: celebrateText 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      white-space: nowrap;
+    }
+
+    .feedback.correct .feedback-content {
+      background: rgba(46, 160, 67, 0.92);
+      box-shadow: 0 8px 32px rgba(46, 160, 67, 0.4);
+    }
+
+    .feedback.wrong .feedback-content {
+      background: rgba(220, 53, 69, 0.92);
+      box-shadow: 0 8px 32px rgba(220, 53, 69, 0.35);
+    }
+
+    .feedback-emoji {
+      font-size: clamp(2rem, 6vw, 3rem);
+      display: block;
+    }
+
+    .feedback-text {
+      font-size: clamp(1.4rem, 4.5vw, 2rem);
+      font-weight: 900;
+      color: #fff;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .feedback-sub {
+      font-size: clamp(0.85rem, 2.2vw, 1rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ===== Result Screen ===== */
+    .result-content {
+      text-align: center;
+      padding: 24px;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .result-card {
+      background: var(--card);
+      border-radius: 28px;
+      padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px);
+      box-shadow: var(--shadow);
+      animation: bounceIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .result-emoji {
+      font-size: clamp(3.5rem, 12vw, 5rem);
+    }
+
+    .result-score-text {
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+      font-weight: 900;
+      margin-top: 8px;
+      line-height: 1.1;
+    }
+
+    .result-stars {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      margin-top: 8px;
+      letter-spacing: 2px;
+    }
+
+    .result-pct-bar {
+      margin: 14px auto 0;
+      width: 80%;
+      max-width: 260px;
+      height: 12px;
+      background: rgba(0,0,0,0.06);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .result-pct-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: var(--accent);
+      transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .result-pct-text {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      font-weight: 800;
+      margin-top: 6px;
+      opacity: 0.6;
+    }
+
+    /* ===== Continent Badge ===== */
+    .continent-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 6px;
+      opacity: 0.8;
+    }
+
+    .continent-badge .cb-emoji { font-size: 1rem; }
+    .continent-badge .cb-ko { font-weight: 800; }
+    .continent-badge .cb-en { opacity: 0.6; }
+
+    .result-message {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-weight: 800;
+      margin-top: 12px;
+      opacity: 0.7;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: clamp(20px, 4vh, 32px);
+      justify-content: center;
+      animation: fadeInUp 0.5s 0.4s ease both;
+    }
+
+    .result-btn {
+      padding: 14px 28px;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 800;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    }
+
+    .result-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .result-btn:active { transform: scale(0.96); }
+
+    .btn-replay {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-menu {
+      background: var(--card);
+      color: var(--text);
+    }
+
+    /* ===== Animations ===== */
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.06); }
+      70% { transform: scale(0.94); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      15%, 45%, 75% { transform: translateX(-6px); }
+      30%, 60%, 90% { transform: translateX(6px); }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(16px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes flagEnter {
+      from { transform: scale(0.88) translateY(10px); opacity: 0; }
+      to { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    @keyframes btnEnter {
+      from { transform: translateY(16px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes celebrateText {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.15); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes gentle-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes flagCelebrate {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.06) rotate(1deg); }
+      60% { transform: scale(0.97) rotate(-0.5deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+
+    @keyframes flagShake {
+      0%, 100% { transform: translateX(0) rotate(0); }
+      12% { transform: translateX(-10px) rotate(-2deg); }
+      25% { transform: translateX(8px) rotate(1.5deg); }
+      37% { transform: translateX(-6px) rotate(-1deg); }
+      50% { transform: translateX(6px) rotate(1deg); }
+      62% { transform: translateX(-4px) rotate(-0.5deg); }
+      75% { transform: translateX(3px) rotate(0.3deg); }
+      87% { transform: translateX(-1px); }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 480px) {
+      .mode-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .game-header { padding: 8px 12px 6px; gap: 8px; }
+      .answer-grid { gap: 8px; flex-direction: column; }
+      .answer-btn { padding: 10px 14px; border-radius: 14px; }
+      .flag-card { border-radius: 16px; padding: 8px; }
+    }
+
+    @media (max-width: 640px) {
+      .flag-area { flex-direction: column; gap: 10px; align-items: center; }
+      .flag-area.with-hints .flag-img {
+        max-height: 20vh;
+        max-width: min(240px, 60vw);
+      }
+      .desc-panel { max-width: 90vw; }
+      .answer-grid { flex-direction: column; }
+    }
+
+    @media (max-width: 640px) and (min-width: 481px) {
+      .answer-grid { flex-direction: row; }
+    }
+
+    @media (max-height: 580px) {
+      .flag-img { max-height: 22vh; }
+      .flag-area.with-hints .flag-img { max-height: 18vh; }
+      .answer-btn { padding: 8px 14px; }
+      .desc-panel { padding: 8px 12px; }
+      .desc-row { font-size: 0.7rem; padding: 2px 0; }
+    }
+
+    @media (max-height: 480px) {
+      .game-main { padding: 2px 12px; }
+      .flag-img { max-height: 18vh; }
+      .desc-panel { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ===== Start Screen ===== -->
+  <div id="screen-start" class="screen active">
+    <div class="start-content">
+      <h1 class="title">🌍 국기 퀴즈</h1>
+      <p class="subtitle">어떤 나라의 국기일까요?</p>
+      <div class="mode-grid" id="mode-grid"></div>
+    </div>
+  </div>
+
+  <!-- ===== Game Screen ===== -->
+  <div id="screen-game" class="screen">
+    <header class="game-header">
+      <button class="btn-back" id="btn-back" aria-label="뒤로가기">←</button>
+      <div class="progress-area">
+        <div class="progress-top">
+          <span id="progress-text">1 / 10</span>
+          <span class="score-display" id="score-display">⭐ 0</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="header-right">
+        <button class="hint-toggle off" id="btn-hint" aria-label="힌트 토글">💡</button>
+      </div>
+    </header>
+
+    <main class="game-main">
+      <div class="flag-area" id="flag-area">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div class="continent-badge" id="continent-badge">
+            <span class="cb-emoji"></span>
+            <span class="cb-ko"></span>
+            <span class="cb-en"></span>
+          </div>
+          <div class="flag-card" id="flag-card">
+            <img class="flag-img" id="flag-img" src="" alt="국기" draggable="false">
+          </div>
+        </div>
+        <div class="desc-panel" id="desc-panel">
+          <div class="desc-row"><span class="desc-icon">🏛️</span><span class="desc-label">수도</span><span class="desc-value" id="d-capital"></span></div>
+          <div class="desc-row"><span class="desc-icon">👥</span><span class="desc-label">인구</span><span class="desc-value" id="d-pop"></span></div>
+          <div class="desc-row"><span class="desc-icon">📐</span><span class="desc-label">면적</span><span class="desc-value" id="d-area"></span></div>
+          <div class="desc-row"><span class="desc-icon">🗣️</span><span class="desc-label">언어</span><span class="desc-value" id="d-lang"></span></div>
+          <div class="desc-row"><span class="desc-icon">💰</span><span class="desc-label">통화</span><span class="desc-value" id="d-curr"></span></div>
+          <div class="desc-row"><span class="desc-icon">🌏</span><span class="desc-label">지역</span><span class="desc-value" id="d-region"></span></div>
+        </div>
+      </div>
+      <div class="answer-grid" id="answer-grid"></div>
+    </main>
+  </div>
+
+  <!-- ===== Result Screen ===== -->
+  <div id="screen-result" class="screen">
+    <div class="result-content">
+      <div class="result-card">
+        <div class="result-emoji" id="result-emoji"></div>
+        <div class="result-score-text" id="result-score-text"></div>
+        <div class="result-stars" id="result-stars"></div>
+        <div class="result-pct-bar"><div class="result-pct-fill" id="result-pct-fill"></div></div>
+        <div class="result-pct-text" id="result-pct-text"></div>
+        <div class="result-message" id="result-message"></div>
+      </div>
+      <div class="result-actions">
+        <button class="result-btn btn-replay" id="btn-replay">🔄 다시 하기</button>
+        <button class="result-btn btn-menu" id="btn-menu">🏠 모드 선택</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Feedback Overlay ===== -->
+  <div class="feedback" id="feedback">
+    <div class="feedback-content">
+      <span class="feedback-emoji" id="fb-emoji"></span>
+      <span class="feedback-text" id="fb-text"></span>
+      <span class="feedback-sub" id="fb-sub"></span>
+    </div>
+  </div>
+
+  <script>
+    /* ===== Data & State ===== */
+    let allCountries = [];
+
+    const state = {
+      mode: null,
+      questions: [],
+      questionIndex: 0,
+      score: 0,
+      firstTry: true,
+      answered: false,
+      transitioning: false,
+      showHints: localStorage.getItem('flagQuiz_hints') === 'true',
+      currentScreen: 'start',
+    };
+
+    const CONTINENT_META = {
+      Africa:    { ko: '아프리카',   emoji: '🌍', from: '#FFF8E1', to: '#FFE082', accent: '#FF9800', mFrom: '#FF9800', mTo: '#F57C00' },
+      Americas:  { ko: '아메리카',   emoji: '🌎', from: '#E8F5E9', to: '#A5D6A7', accent: '#43A047', mFrom: '#66BB6A', mTo: '#43A047' },
+      Asia:      { ko: '아시아',     emoji: '🌏', from: '#FFF0F0', to: '#FFCDD2', accent: '#E53935', mFrom: '#EF5350', mTo: '#E53935' },
+      Europe:    { ko: '유럽',       emoji: '🏰', from: '#E3F2FD', to: '#90CAF9', accent: '#1E88E5', mFrom: '#42A5F5', mTo: '#1E88E5' },
+      Oceania:   { ko: '오세아니아', emoji: '🏝️', from: '#E0F7FA', to: '#80DEEA', accent: '#00ACC1', mFrom: '#26C6DA', mTo: '#00ACC1' },
+      Antarctic: { ko: '남극',       emoji: '🧊', from: '#ECEFF1', to: '#B0BEC5', accent: '#607D8B', mFrom: '#78909C', mTo: '#546E7A' },
+    };
+
+    // Duplicate-flag territories (um, bv, sj, mf) removed from countries.json
+
+    const CONFETTI_COLORS = ['#FF6B6B','#4ECDC4','#FFD93D','#A78BFA','#34D399','#F97316','#F472B6','#60A5FA'];
+
+    /* ===== Utility ===== */
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+    function fmt(n) { return n.toLocaleString('ko-KR'); }
+
+    /* ===== Confetti ===== */
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let confettiRunning = false;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function burstConfetti(x, y, count) {
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.5;
+        const speed = 4 + Math.random() * 8;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 3 - Math.random() * 3,
+          w: 5 + Math.random() * 7,
+          h: 3 + Math.random() * 4,
+          color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+          rot: Math.random() * 360,
+          rotV: (Math.random() - 0.5) * 14,
+          life: 1,
+          decay: 0.007 + Math.random() * 0.01,
+          gravity: 0.12 + Math.random() * 0.08,
+        });
+      }
+      if (!confettiRunning) animateConfetti();
+    }
+
+    function animateConfetti() {
+      confettiRunning = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.vy += p.gravity;
+        p.y += p.vy;
+        p.vx *= 0.99;
+        p.rot += p.rotV;
+        p.life -= p.decay;
+
+        if (p.life <= 0 || p.y > canvas.height + 20) {
+          particles.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.globalAlpha = Math.min(p.life, 1);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+
+      if (particles.length > 0) {
+        requestAnimationFrame(animateConfetti);
+      } else {
+        confettiRunning = false;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    /* ===== Screen Management ===== */
+    function showScreen(name) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(`screen-${name}`).classList.add('active');
+      state.currentScreen = name;
+    }
+
+    function setTheme(from, to, accent) {
+      const r = document.documentElement;
+      r.style.setProperty('--bg-from', from);
+      r.style.setProperty('--bg-to', to);
+      r.style.setProperty('--accent', accent);
+    }
+
+    /* ===== Start Screen ===== */
+    function buildStartScreen() {
+      const grid = document.getElementById('mode-grid');
+      grid.innerHTML = '';
+
+      const continents = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'Antarctic'];
+      const counts = {};
+      allCountries.forEach(c => { counts[c.continent] = (counts[c.continent] || 0) + 1; });
+
+      continents.forEach(key => {
+        const m = CONTINENT_META[key];
+        const btn = document.createElement('button');
+        btn.className = 'mode-btn';
+        btn.style.setProperty('--m-from', m.mFrom);
+        btn.style.setProperty('--m-to', m.mTo);
+        btn.innerHTML = `
+          <span class="emoji">${m.emoji}</span>
+          <span class="label-ko">${m.ko}</span>
+          <span class="label-en">${key}</span>
+          <span class="count">${counts[key] || 0}${key === 'Antarctic' ? '개 지역' : '개국'}</span>
+        `;
+        btn.onclick = () => startGame(key);
+        grid.appendChild(btn);
+      });
+
+      const allBtn = document.createElement('button');
+      allBtn.className = 'mode-btn mode-all';
+      allBtn.style.setProperty('--m-from', '#AB47BC');
+      allBtn.style.setProperty('--m-to', '#8E24AA');
+      allBtn.innerHTML = `
+        <span class="emoji">🌐</span>
+        <div class="mode-all-text">
+          <span class="label-ko">전체</span>
+          <span class="label-en">All Continents · ${allCountries.length}개국</span>
+        </div>
+      `;
+      allBtn.onclick = () => startGame('all');
+      grid.appendChild(allBtn);
+    }
+
+    /* ===== Game Logic ===== */
+    function startGame(mode) {
+      state.mode = mode;
+      let pool;
+      if (mode === 'all') {
+        pool = [...allCountries];
+        setTheme('#F3E5F5', '#CE93D8', '#9C27B0');
+      } else {
+        pool = allCountries.filter(c => c.continent === mode);
+        const m = CONTINENT_META[mode];
+        setTheme(m.from, m.to, m.accent);
+      }
+
+      state.questions = shuffle(pool);
+      state.questionIndex = 0;
+      state.score = 0;
+      state.answered = false;
+      state.transitioning = false;
+
+      preloadFlags(state.questions);
+      showScreen('game');
+      updateHintUI();
+      showQuestion();
+    }
+
+    function preloadFlags(countries) {
+      countries.forEach(c => {
+        const img = new Image();
+        img.src = c.flag_uri;
+      });
+    }
+
+    function showQuestion() {
+      const q = state.questions[state.questionIndex];
+      state.firstTry = true;
+      state.answered = false;
+
+      // Progress
+      const total = state.questions.length;
+      const idx = state.questionIndex;
+      document.getElementById('progress-text').textContent = `${idx + 1} / ${total}`;
+      document.getElementById('progress-fill').style.width = `${((idx) / total) * 100}%`;
+      document.getElementById('score-display').textContent = `⭐ ${state.score}`;
+
+      // Flag
+      const flagImg = document.getElementById('flag-img');
+      const flagCard = document.getElementById('flag-card');
+      flagImg.src = q.flag_uri;
+      flagImg.alt = '국기';
+      flagCard.classList.remove('flag-enter', 'flag-correct', 'flag-wrong');
+      flagCard.style.boxShadow = '';
+      void flagCard.offsetWidth;
+      flagCard.classList.add('flag-enter');
+
+      // Continent badge
+      const meta = CONTINENT_META[q.continent];
+      const badge = document.getElementById('continent-badge');
+      if (meta) {
+        badge.querySelector('.cb-emoji').textContent = meta.emoji;
+        badge.querySelector('.cb-ko').textContent = meta.ko;
+        badge.querySelector('.cb-en').textContent = q.continent;
+        badge.style.display = '';
+      } else {
+        badge.style.display = 'none';
+      }
+
+      // Description
+      updateDescription(q);
+
+      // Answers
+      const continent = q.continent;
+      const samePool = allCountries.filter(c => c.continent === continent && c.code !== q.code);
+      const wrongs = shuffle(samePool).slice(0, 2);
+      const options = shuffle([q, ...wrongs]);
+
+      const grid = document.getElementById('answer-grid');
+      grid.innerHTML = '';
+
+      options.forEach((opt) => {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.innerHTML = `
+          <span class="btn-name-ko">${opt.name_ko}</span>
+          <span class="btn-name-en">${opt.name_en}</span>
+        `;
+        btn.onclick = () => checkAnswer(btn, opt, q);
+        grid.appendChild(btn);
+      });
+    }
+
+    function updateDescription(country) {
+      const panel = document.getElementById('desc-panel');
+      const area = document.getElementById('flag-area');
+
+      if (state.showHints) {
+        panel.classList.add('visible');
+        area.classList.add('with-hints');
+        const d = country.description;
+        document.getElementById('d-capital').textContent = d.capital;
+        document.getElementById('d-pop').textContent = fmt(d.population) + '명';
+        document.getElementById('d-area').textContent = fmt(d.area_km2) + ' km²';
+        document.getElementById('d-lang').textContent = d.languages.join(', ');
+        document.getElementById('d-curr').textContent = d.currency;
+        document.getElementById('d-region').textContent = d.subregion;
+      } else {
+        panel.classList.remove('visible');
+        area.classList.remove('with-hints');
+      }
+    }
+
+    function checkAnswer(btn, selected, correct) {
+      if (state.answered || state.transitioning || btn.disabled) return;
+
+      if (selected.code === correct.code) {
+        /* --- Correct --- */
+        state.answered = true;
+        btn.classList.add('correct');
+
+        // Flag celebrate animation
+        const flagCard = document.getElementById('flag-card');
+        flagCard.classList.add('flag-correct');
+
+        if (state.firstTry) {
+          state.score++;
+          const sd = document.getElementById('score-display');
+          sd.textContent = `⭐ ${state.score}`;
+          sd.classList.add('bump');
+          setTimeout(() => sd.classList.remove('bump'), 300);
+        }
+
+        // Update progress fill on correct answer
+        const total = state.questions.length;
+        const idx = state.questionIndex;
+        document.getElementById('progress-fill').style.width = `${((idx + 1) / total) * 100}%`;
+
+        showFeedback('correct', '', correct.name_ko, correct.name_en);
+
+        // Firework confetti bursts
+        const cx = window.innerWidth / 2, cy = window.innerHeight * 0.38;
+        burstConfetti(cx, cy, 100);
+        setTimeout(() => burstConfetti(cx - 120, cy - 40, 40), 200);
+        setTimeout(() => burstConfetti(cx + 120, cy - 40, 40), 350);
+
+        state.transitioning = true;
+        setTimeout(() => {
+          hideFeedback();
+          state.transitioning = false;
+          state.questionIndex++;
+          if (state.questionIndex >= state.questions.length) {
+            showResults();
+          } else {
+            showQuestion();
+          }
+        }, 1600);
+
+      } else {
+        /* --- Wrong --- */
+        state.firstTry = false;
+        btn.classList.add('wrong');
+        btn.disabled = true;
+
+        // Flag shake animation
+        const flagCard = document.getElementById('flag-card');
+        flagCard.classList.remove('flag-wrong');
+        void flagCard.offsetWidth;
+        flagCard.classList.add('flag-wrong');
+
+        // Show wrong country's flag in the button
+        const flagEl = document.createElement('img');
+        flagEl.className = 'btn-flag';
+        flagEl.src = selected.flag_uri;
+        flagEl.alt = selected.name_en;
+        btn.insertBefore(flagEl, btn.firstChild);
+      }
+    }
+
+    /* ===== Feedback ===== */
+    function showFeedback(type, emoji, text, sub) {
+      const fb = document.getElementById('feedback');
+      fb.classList.remove('correct', 'wrong');
+      fb.classList.add(type);
+      document.getElementById('fb-emoji').textContent = emoji;
+      document.getElementById('fb-text').textContent = text;
+      document.getElementById('fb-sub').textContent = sub;
+      fb.classList.add('show');
+      // Re-trigger animation
+      const content = fb.querySelector('.feedback-content');
+      content.style.animation = 'none';
+      void content.offsetWidth;
+      content.style.animation = '';
+    }
+
+    function hideFeedback() {
+      document.getElementById('feedback').classList.remove('show');
+    }
+
+    /* ===== Results ===== */
+    function showResults() {
+      const total = state.questions.length;
+      const score = state.score;
+      const pct = score / total;
+
+      let emoji, message;
+      if (pct >= 1)        { emoji = '🏆'; message = '완벽해요! Perfect!'; }
+      else if (pct >= 0.8) { emoji = '🌟'; message = '대단해요! Amazing!'; }
+      else if (pct >= 0.6) { emoji = '⭐'; message = '잘했어요! Great job!'; }
+      else if (pct >= 0.4) { emoji = '👍'; message = '좋아요! Good effort!'; }
+      else                 { emoji = '💪'; message = '다음엔 더 잘할 수 있어요!'; }
+
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-score-text').textContent = `${score} / ${total}`;
+
+      // Stars row (show up to 10 stars for visual, or scale down)
+      const maxStars = Math.min(total, 10);
+      const filledStars = Math.round((score / total) * maxStars);
+      document.getElementById('result-stars').textContent =
+        '⭐'.repeat(filledStars) + '☆'.repeat(maxStars - filledStars);
+
+      // Percentage bar
+      const pctNum = Math.round(pct * 100);
+      document.getElementById('result-pct-fill').style.width = '0%';
+      document.getElementById('result-pct-text').textContent = `${pctNum}%`;
+      document.getElementById('result-message').textContent = message;
+
+      showScreen('result');
+
+      // Animate percentage bar after screen shows
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.getElementById('result-pct-fill').style.width = `${pctNum}%`;
+        });
+      });
+
+      if (pct >= 0.7) {
+        setTimeout(() => burstConfetti(window.innerWidth / 2, window.innerHeight / 3, 120), 400);
+      }
+    }
+
+    /* ===== Hint Toggle ===== */
+    function updateHintUI() {
+      const btn = document.getElementById('btn-hint');
+      btn.className = 'hint-toggle ' + (state.showHints ? 'on' : 'off');
+    }
+
+    document.getElementById('btn-hint').addEventListener('click', () => {
+      state.showHints = !state.showHints;
+      localStorage.setItem('flagQuiz_hints', state.showHints);
+      updateHintUI();
+      if (state.currentScreen === 'game' && state.questions[state.questionIndex]) {
+        updateDescription(state.questions[state.questionIndex]);
+      }
+    });
+
+    /* ===== Navigation ===== */
+    document.getElementById('btn-back').addEventListener('click', () => {
+      setTheme('#FFECD2', '#FCB69F', '#FF6B6B');
+      showScreen('start');
+    });
+
+    document.getElementById('btn-replay').addEventListener('click', () => {
+      startGame(state.mode);
+    });
+
+    document.getElementById('btn-menu').addEventListener('click', () => {
+      setTheme('#FFECD2', '#FCB69F', '#FF6B6B');
+      showScreen('start');
+    });
+
+    /* ===== Init ===== */
+    async function init() {
+      try {
+        const resp = await fetch('data/countries.json');
+        allCountries = await resp.json();
+        buildStartScreen();
+      } catch (err) {
+        document.querySelector('.subtitle').textContent = '데이터를 불러올 수 없습니다. 서버에서 실행해주세요.';
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
