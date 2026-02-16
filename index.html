@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <style>
     /* ===== Reset & Base ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -216,13 +218,6 @@
       width: 0%;
     }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
     .score-display {
       font-size: 0.95rem;
       font-weight: 800;
@@ -238,29 +233,6 @@
       transform: scale(1.15);
     }
 
-    .hint-toggle {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-      flex-shrink: 0;
-    }
-
-    .hint-toggle.off {
-      background: var(--card);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-
-    .hint-toggle.on {
-      background: #FFF3BF;
-      box-shadow: 0 2px 12px rgba(255, 200, 0, 0.3);
-    }
-
-    .hint-toggle:hover { transform: scale(1.08); }
 
     /* ===== Game Main ===== */
     .game-main {
@@ -281,10 +253,6 @@
       justify-content: center;
       gap: 20px;
       max-width: 100%;
-    }
-
-    .flag-area.with-hints {
-      gap: 24px;
     }
 
     .flag-card {
@@ -310,10 +278,7 @@
       border: 1px solid rgba(0,0,0,0.06);
     }
 
-    .flag-area.with-hints .flag-img {
-      max-width: min(280px, 40vw);
-      max-height: 28vh;
-    }
+    .flag-card { cursor: pointer; }
 
     .flag-enter {
       animation: flagEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -329,31 +294,98 @@
       animation: flagShake 0.55s ease;
     }
 
-    .desc-panel {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 14px 18px;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
-      display: none;
-      max-width: 260px;
-      flex-shrink: 0;
-      animation: fadeInUp 0.4s ease both;
+    /* ===== Description Drawer ===== */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 800;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
 
-    .desc-panel.visible { display: block; }
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .desc-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 801;
+      background: #fff;
+      border-radius: 24px 24px 0 0;
+      padding: 12px 24px 28px;
+      box-shadow: 0 -4px 30px rgba(0,0,0,0.15);
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .drawer-backdrop.open .desc-drawer {
+      transform: translateY(0);
+    }
+
+    .drawer-handle {
+      width: 40px;
+      height: 4px;
+      background: #DDD;
+      border-radius: 2px;
+      margin: 0 auto 12px;
+    }
+
+    .drawer-title {
+      font-size: 1rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .drawer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+    }
 
     .desc-row {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 3px 0;
-      font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+      padding: 6px 0;
+      font-size: clamp(0.78rem, 1.8vw, 0.88rem);
     }
 
-    .desc-row + .desc-row { border-top: 1px solid rgba(0,0,0,0.04); padding-top: 4px; }
-    .desc-icon { font-size: 1rem; flex-shrink: 0; width: 20px; text-align: center; }
+    .desc-icon { font-size: 1.1rem; flex-shrink: 0; width: 22px; text-align: center; }
     .desc-label { font-weight: 800; color: #888; min-width: 28px; flex-shrink: 0; }
     .desc-value { font-weight: 700; color: var(--text); word-break: break-word; }
+
+    @media (max-width: 480px) {
+      .drawer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Globe ===== */
+    .globe-wrapper {
+      flex-shrink: 0;
+      display: none;
+      align-self: center;
+    }
+
+    .globe-wrapper.active {
+      display: block;
+      animation: fadeInUp 0.4s ease both;
+    }
+
+    #globe-canvas {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+    }
 
     /* ===== Answer Grid ===== */
     .answer-grid {
@@ -679,12 +711,9 @@
     }
 
     @media (max-width: 640px) {
+      .globe-wrapper { order: 2; }
+      #globe-canvas { width: 140px; height: 140px; }
       .flag-area { flex-direction: column; gap: 10px; align-items: center; }
-      .flag-area.with-hints .flag-img {
-        max-height: 20vh;
-        max-width: min(240px, 60vw);
-      }
-      .desc-panel { max-width: 90vw; }
       .answer-grid { flex-direction: column; }
     }
 
@@ -694,16 +723,13 @@
 
     @media (max-height: 580px) {
       .flag-img { max-height: 22vh; }
-      .flag-area.with-hints .flag-img { max-height: 18vh; }
       .answer-btn { padding: 8px 14px; }
-      .desc-panel { padding: 8px 12px; }
-      .desc-row { font-size: 0.7rem; padding: 2px 0; }
     }
 
     @media (max-height: 480px) {
       .game-main { padding: 2px 12px; }
       .flag-img { max-height: 18vh; }
-      .desc-panel { display: none !important; }
+      .globe-wrapper { display: none !important; }
     }
   </style>
 </head>
@@ -731,13 +757,13 @@
         </div>
         <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
       </div>
-      <div class="header-right">
-        <button class="hint-toggle off" id="btn-hint" aria-label="힌트 토글">💡</button>
-      </div>
     </header>
 
     <main class="game-main">
       <div class="flag-area" id="flag-area">
+        <div class="globe-wrapper" id="globe-wrapper">
+          <canvas id="globe-canvas"></canvas>
+        </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
           <div class="continent-badge" id="continent-badge">
             <span class="cb-emoji"></span>
@@ -747,14 +773,6 @@
           <div class="flag-card" id="flag-card">
             <img class="flag-img" id="flag-img" src="" alt="국기" draggable="false">
           </div>
-        </div>
-        <div class="desc-panel" id="desc-panel">
-          <div class="desc-row"><span class="desc-icon">🏛️</span><span class="desc-label">수도</span><span class="desc-value" id="d-capital"></span></div>
-          <div class="desc-row"><span class="desc-icon">👥</span><span class="desc-label">인구</span><span class="desc-value" id="d-pop"></span></div>
-          <div class="desc-row"><span class="desc-icon">📐</span><span class="desc-label">면적</span><span class="desc-value" id="d-area"></span></div>
-          <div class="desc-row"><span class="desc-icon">🗣️</span><span class="desc-label">언어</span><span class="desc-value" id="d-lang"></span></div>
-          <div class="desc-row"><span class="desc-icon">💰</span><span class="desc-label">통화</span><span class="desc-value" id="d-curr"></span></div>
-          <div class="desc-row"><span class="desc-icon">🌏</span><span class="desc-label">지역</span><span class="desc-value" id="d-region"></span></div>
         </div>
       </div>
       <div class="answer-grid" id="answer-grid"></div>
@@ -788,6 +806,22 @@
     </div>
   </div>
 
+  <!-- ===== Description Drawer ===== -->
+  <div class="drawer-backdrop" id="drawer-backdrop">
+    <div class="desc-drawer" id="desc-drawer">
+      <div class="drawer-handle"></div>
+      <div class="drawer-title" id="drawer-title"></div>
+      <div class="drawer-grid">
+        <div class="desc-row"><span class="desc-icon">🏛️</span><span class="desc-label">수도</span><span class="desc-value" id="d-capital"></span></div>
+        <div class="desc-row"><span class="desc-icon">👥</span><span class="desc-label">인구</span><span class="desc-value" id="d-pop"></span></div>
+        <div class="desc-row"><span class="desc-icon">📐</span><span class="desc-label">면적</span><span class="desc-value" id="d-area"></span></div>
+        <div class="desc-row"><span class="desc-icon">🗣️</span><span class="desc-label">언어</span><span class="desc-value" id="d-lang"></span></div>
+        <div class="desc-row"><span class="desc-icon">💰</span><span class="desc-label">통화</span><span class="desc-value" id="d-curr"></span></div>
+        <div class="desc-row"><span class="desc-icon">🌏</span><span class="desc-label">지역</span><span class="desc-value" id="d-region"></span></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     /* ===== Data & State ===== */
     let allCountries = [];
@@ -800,7 +834,6 @@
       firstTry: true,
       answered: false,
       transitioning: false,
-      showHints: localStorage.getItem('flagQuiz_hints') === 'true',
       currentScreen: 'start',
     };
 
@@ -899,6 +932,211 @@
       }
     }
 
+    /* ===== Globe: ISO 3166-1 numeric → alpha-2 ===== */
+    const NUM_TO_ALPHA2 = {
+      "004":"af","008":"al","010":"aq","012":"dz","016":"as","020":"ad","024":"ao",
+      "028":"ag","031":"az","032":"ar","036":"au","040":"at","044":"bs","048":"bh",
+      "050":"bd","051":"am","052":"bb","056":"be","060":"bm","064":"bt","068":"bo",
+      "070":"ba","072":"bw","074":"bv","076":"br","084":"bz","086":"io","090":"sb",
+      "092":"vg","096":"bn","100":"bg","104":"mm","108":"bi","112":"by","116":"kh",
+      "120":"cm","124":"ca","132":"cv","136":"ky","140":"cf","144":"lk","148":"td",
+      "152":"cl","156":"cn","158":"tw","162":"cx","166":"cc","170":"co","174":"km",
+      "175":"yt","178":"cg","180":"cd","184":"ck","188":"cr","191":"hr","192":"cu",
+      "196":"cy","203":"cz","204":"bj","208":"dk","212":"dm","214":"do","218":"ec",
+      "222":"sv","226":"gq","231":"et","232":"er","233":"ee","234":"fo","238":"fk",
+      "239":"gs","242":"fj","246":"fi","250":"fr","254":"gf","258":"pf","260":"tf",
+      "262":"dj","266":"ga","268":"ge","270":"gm","275":"ps","276":"de","288":"gh",
+      "292":"gi","296":"ki","300":"gr","304":"gl","308":"gd","312":"gp","316":"gu",
+      "320":"gt","324":"gn","328":"gy","332":"ht","334":"hm","336":"va","340":"hn",
+      "344":"hk","348":"hu","352":"is","356":"in","360":"id","364":"ir","368":"iq",
+      "372":"ie","376":"il","380":"it","384":"ci","388":"jm","392":"jp","398":"kz",
+      "400":"jo","404":"ke","408":"kp","410":"kr","414":"kw","417":"kg","418":"la",
+      "422":"lb","426":"ls","428":"lv","430":"lr","434":"ly","438":"li","440":"lt",
+      "442":"lu","446":"mo","450":"mg","454":"mw","458":"my","462":"mv","466":"ml",
+      "470":"mt","474":"mq","478":"mr","480":"mu","484":"mx","492":"mc","496":"mn",
+      "498":"md","499":"me","500":"ms","504":"ma","508":"mz","512":"om","516":"na",
+      "520":"nr","524":"np","528":"nl","531":"cw","533":"aw","534":"sx","535":"bq",
+      "540":"nc","548":"vu","554":"nz","558":"ni","562":"ne","566":"ng","570":"nu",
+      "574":"nf","578":"no","580":"mp","583":"fm","584":"mh","585":"pw","586":"pk",
+      "591":"pa","598":"pg","600":"py","604":"pe","608":"ph","612":"pn","616":"pl",
+      "620":"pt","624":"gw","626":"tl","630":"pr","634":"qa","638":"re","642":"ro",
+      "643":"ru","646":"rw","652":"bl","654":"sh","659":"kn","660":"ai","662":"lc",
+      "663":"mf","666":"pm","670":"vc","674":"sm","678":"st","682":"sa","686":"sn",
+      "688":"rs","690":"sc","694":"sl","702":"sg","703":"sk","704":"vn","705":"si",
+      "706":"so","710":"za","716":"zw","720":"ye","724":"es","728":"ss","729":"sd",
+      "732":"eh","740":"sr","744":"sj","748":"sz","752":"se","756":"ch","760":"sy",
+      "762":"tj","764":"th","768":"tg","772":"tk","776":"to","780":"tt","784":"ae",
+      "788":"tn","792":"tr","795":"tm","796":"tc","798":"tv","800":"ug","804":"ua",
+      "807":"mk","818":"eg","826":"gb","831":"gg","832":"je","833":"im","834":"tz",
+      "840":"us","850":"vi","854":"bf","858":"uy","860":"uz","862":"ve","876":"wf",
+      "882":"ws","887":"ye","894":"zm"
+    };
+    const ALPHA2_TO_NUM = {};
+    for (const [num, a2] of Object.entries(NUM_TO_ALPHA2)) ALPHA2_TO_NUM[a2] = num;
+
+    /* ===== Globe State ===== */
+    let globeReady = false;
+    let globeLand = null;
+    let globeCountries = null;
+    let globeBorders = null;
+    let countryByAlpha2 = {};
+    let globeProjection = null;
+    let globePath = null;
+    let globeAnimId = null;
+    let globeCurrentRotation = [0, -20, 0];
+    const GLOBE_SIZE_DESKTOP = 220;
+    const GLOBE_SIZE_MOBILE = 140;
+
+    function getGlobeSize() {
+      return window.innerWidth <= 640 ? GLOBE_SIZE_MOBILE : GLOBE_SIZE_DESKTOP;
+    }
+
+    function initGlobeCanvas() {
+      const globeCanvas = document.getElementById('globe-canvas');
+      const size = getGlobeSize();
+      const dpr = window.devicePixelRatio || 1;
+      globeCanvas.width = size * dpr;
+      globeCanvas.height = size * dpr;
+      globeCanvas.style.width = size + 'px';
+      globeCanvas.style.height = size + 'px';
+
+      globeProjection = d3.geoOrthographic()
+        .scale(size * dpr / 2 - 2)
+        .translate([size * dpr / 2, size * dpr / 2])
+        .clipAngle(90);
+
+      globePath = d3.geoPath(globeProjection, globeCanvas.getContext('2d'));
+      globeProjection.rotate(globeCurrentRotation);
+    }
+
+    function renderGlobe(highlightCode) {
+      if (!globeReady) return;
+      const globeCanvas = document.getElementById('globe-canvas');
+      const globeCtx = globeCanvas.getContext('2d');
+      const w = globeCanvas.width;
+      const h = globeCanvas.height;
+      globeCtx.clearRect(0, 0, w, h);
+
+      // 1. Ocean
+      globeCtx.beginPath();
+      globePath.pointRadius(0);
+      globePath({type: 'Sphere'});
+      globeCtx.fillStyle = '#E3F2FD';
+      globeCtx.fill();
+
+      // 2. Land
+      globeCtx.beginPath();
+      globePath(globeLand);
+      globeCtx.fillStyle = '#CFD8DC';
+      globeCtx.fill();
+
+      // 3. Highlight country
+      if (highlightCode) {
+        const feature = countryByAlpha2[highlightCode];
+        if (feature) {
+          globeCtx.beginPath();
+          globePath(feature);
+          globeCtx.fillStyle = '#FF6B6B';
+          globeCtx.fill();
+        }
+      }
+
+      // 4. Borders
+      globeCtx.beginPath();
+      globePath(globeBorders);
+      globeCtx.strokeStyle = 'rgba(255,255,255,0.6)';
+      globeCtx.lineWidth = 0.5;
+      globeCtx.stroke();
+
+      // 5. Globe outline
+      globeCtx.beginPath();
+      globePath({type: 'Sphere'});
+      globeCtx.strokeStyle = 'rgba(0,0,0,0.08)';
+      globeCtx.lineWidth = 1.5;
+      globeCtx.stroke();
+    }
+
+    function rotateGlobeTo(targetRotation, duration, highlightCode) {
+      if (globeAnimId) cancelAnimationFrame(globeAnimId);
+      const startRotation = [...globeCurrentRotation];
+      const startTime = performance.now();
+
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+      }
+
+      function step(now) {
+        const elapsed = now - startTime;
+        const t = Math.min(elapsed / duration, 1);
+        const e = easeInOutCubic(t);
+
+        globeCurrentRotation = [
+          startRotation[0] + (targetRotation[0] - startRotation[0]) * e,
+          startRotation[1] + (targetRotation[1] - startRotation[1]) * e,
+          startRotation[2] + (targetRotation[2] - startRotation[2]) * e,
+        ];
+        globeProjection.rotate(globeCurrentRotation);
+        renderGlobe(highlightCode);
+
+        if (t < 1) {
+          globeAnimId = requestAnimationFrame(step);
+        } else {
+          globeAnimId = null;
+        }
+      }
+      globeAnimId = requestAnimationFrame(step);
+    }
+
+    function showGlobe(code) {
+      const wrapper = document.getElementById('globe-wrapper');
+      if (!globeReady) { wrapper.classList.remove('active'); return; }
+
+      const feature = countryByAlpha2[code];
+      if (feature) {
+        wrapper.classList.add('active');
+        const centroid = d3.geoCentroid(feature);
+        rotateGlobeTo([-centroid[0], -centroid[1], 0], 800, code);
+      } else {
+        // Small territory not in 110m data — hide globe
+        wrapper.classList.remove('active');
+        if (globeAnimId) { cancelAnimationFrame(globeAnimId); globeAnimId = null; }
+      }
+    }
+
+    async function loadWorldAtlas() {
+      try {
+        const resp = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+        if (!resp.ok) throw new Error('Failed to load world atlas');
+        const world = await resp.json();
+
+        globeLand = topojson.feature(world, world.objects.land);
+        globeCountries = topojson.feature(world, world.objects.countries);
+        globeBorders = topojson.mesh(world, world.objects.countries, (a, b) => a !== b);
+
+        // Build alpha-2 → GeoJSON feature lookup
+        countryByAlpha2 = {};
+        globeCountries.features.forEach(f => {
+          const a2 = NUM_TO_ALPHA2[f.id];
+          if (a2) countryByAlpha2[a2] = f;
+        });
+
+        initGlobeCanvas();
+        globeReady = true;
+      } catch (err) {
+        // Graceful degradation: game works without globe
+        console.warn('Globe data not available:', err.message);
+        globeReady = false;
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      if (globeReady) {
+        initGlobeCanvas();
+        // Re-render with current state
+        renderGlobe(null);
+      }
+    });
+
     /* ===== Screen Management ===== */
     function showScreen(name) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -974,7 +1212,6 @@
 
       preloadFlags(state.questions);
       showScreen('game');
-      updateHintUI();
       showQuestion();
     }
 
@@ -1019,8 +1256,12 @@
         badge.style.display = 'none';
       }
 
-      // Description
-      updateDescription(q);
+      // Globe
+      showGlobe(q.code);
+
+      // Drawer data (populated but closed)
+      closeDrawer();
+      populateDrawer(q);
 
       // Answers
       const continent = q.continent;
@@ -1043,24 +1284,23 @@
       });
     }
 
-    function updateDescription(country) {
-      const panel = document.getElementById('desc-panel');
-      const area = document.getElementById('flag-area');
+    function populateDrawer(country) {
+      const d = country.description;
+      document.getElementById('drawer-title').textContent = `${country.name_ko} ${country.name_en}`;
+      document.getElementById('d-capital').textContent = d.capital;
+      document.getElementById('d-pop').textContent = fmt(d.population) + '명';
+      document.getElementById('d-area').textContent = fmt(d.area_km2) + ' km²';
+      document.getElementById('d-lang').textContent = d.languages.join(', ');
+      document.getElementById('d-curr').textContent = d.currency;
+      document.getElementById('d-region').textContent = d.subregion;
+    }
 
-      if (state.showHints) {
-        panel.classList.add('visible');
-        area.classList.add('with-hints');
-        const d = country.description;
-        document.getElementById('d-capital').textContent = d.capital;
-        document.getElementById('d-pop').textContent = fmt(d.population) + '명';
-        document.getElementById('d-area').textContent = fmt(d.area_km2) + ' km²';
-        document.getElementById('d-lang').textContent = d.languages.join(', ');
-        document.getElementById('d-curr').textContent = d.currency;
-        document.getElementById('d-region').textContent = d.subregion;
-      } else {
-        panel.classList.remove('visible');
-        area.classList.remove('with-hints');
-      }
+    function openDrawer() {
+      document.getElementById('drawer-backdrop').classList.add('open');
+    }
+
+    function closeDrawer() {
+      document.getElementById('drawer-backdrop').classList.remove('open');
     }
 
     function checkAnswer(btn, selected, correct) {
@@ -1191,24 +1431,25 @@
       }
     }
 
-    /* ===== Hint Toggle ===== */
-    function updateHintUI() {
-      const btn = document.getElementById('btn-hint');
-      btn.className = 'hint-toggle ' + (state.showHints ? 'on' : 'off');
-    }
+    /* ===== Drawer Events ===== */
+    document.getElementById('flag-card').addEventListener('click', () => {
+      if (state.currentScreen === 'game') openDrawer();
+    });
 
-    document.getElementById('btn-hint').addEventListener('click', () => {
-      state.showHints = !state.showHints;
-      localStorage.setItem('flagQuiz_hints', state.showHints);
-      updateHintUI();
-      if (state.currentScreen === 'game' && state.questions[state.questionIndex]) {
-        updateDescription(state.questions[state.questionIndex]);
-      }
+    document.getElementById('drawer-backdrop').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeDrawer();
+    });
+
+    document.getElementById('desc-drawer').addEventListener('click', (e) => {
+      e.stopPropagation();
     });
 
     /* ===== Navigation ===== */
     document.getElementById('btn-back').addEventListener('click', () => {
       setTheme('#FFECD2', '#FCB69F', '#FF6B6B');
+      closeDrawer();
+      document.getElementById('globe-wrapper').classList.remove('active');
+      if (globeAnimId) { cancelAnimationFrame(globeAnimId); globeAnimId = null; }
       showScreen('start');
     });
 
@@ -1224,7 +1465,10 @@
     /* ===== Init ===== */
     async function init() {
       try {
-        const resp = await fetch('data/countries.json');
+        const [resp] = await Promise.all([
+          fetch('data/countries.json'),
+          loadWorldAtlas(),
+        ]);
         allCountries = await resp.json();
         buildStartScreen();
       } catch (err) {
