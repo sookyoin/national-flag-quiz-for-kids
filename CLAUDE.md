@@ -15,11 +15,18 @@ scripts/fetch-flags.mjs # 데이터 재수집 스크립트
 
 - **모드 선택**: 대륙별 (Africa, Americas, Asia, Europe, Oceania, Antarctic) + 전체
 - **퀴즈**: 국기 이미지 보고 3지선다 (정답 1 + 같은 대륙 오답 2), 한글/영어 병기
-- **힌트 토글**: 💡 버튼으로 국가 설명(수도, 인구, 면적, 언어, 통화, 지역) on/off (localStorage 저장)
+- **지구본**: D3 orthographic 투영 + Canvas 렌더링, 문제마다 해당 국가 위치로 회전 애니메이션 (800ms). 110m 데이터에 없는 소규모 영토는 지구본 숨김. CDN(world-atlas@2) 실패 시 graceful degradation.
+- **국가 정보 Drawer**: 국기 클릭 시 하단에서 올라오는 drawer로 국가 설명(수도, 인구, 면적, 언어, 통화, 지역) 표시. 배경 클릭으로 닫기.
 - **대륙 배지**: 국기 위에 해당 대륙 한글/영어 표시
 - **피드백**: 정답 시 국가명(한/영) 표시 + 초록 글로우 + 컨페티 폭발, 오답 시 빨간 테두리 + 흔들림 (문구 없음)
 - **결과 화면**: 점수/퍼센트 바/별점 표시
 - **반응형 풀페이지**: 스크롤 없이 모든 화면 크기 대응
+
+## 외부 의존성 (CDN)
+
+- **D3@7**: `https://cdn.jsdelivr.net/npm/d3@7` — 지구본 투영/렌더링
+- **topojson-client@3**: `https://cdn.jsdelivr.net/npm/topojson-client@3` — TopoJSON 파싱
+- **world-atlas@2**: `https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json` — 국가 경계 데이터 (~30KB gzip). ISO 3166-1 numeric 코드 사용, JS 내 NUM_TO_ALPHA2 매핑 테이블로 alpha-2 변환.
 
 ## 데이터 구조
 
