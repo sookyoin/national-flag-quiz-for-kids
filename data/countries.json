@@ -3766,23 +3766,6 @@
     "continent": "Americas"
   },
   {
-    "code": "tr",
-    "name_ko": "튀르키예",
-    "name_en": "Turkey",
-    "description": {
-      "capital": "Ankara",
-      "population": 85664944,
-      "area_km2": 783562,
-      "languages": [
-        "Turkish"
-      ],
-      "currency": "Turkish lira (₺)",
-      "subregion": "Western Asia"
-    },
-    "flag_uri": "assets/flags/tr.png",
-    "continent": "Asia"
-  },
-  {
     "code": "tg",
     "name_ko": "토고",
     "name_en": "Togo",
@@ -3888,6 +3871,23 @@
     },
     "flag_uri": "assets/flags/tn.png",
     "continent": "Africa"
+  },
+  {
+    "code": "tr",
+    "name_ko": "튀르키예",
+    "name_en": "Turkey",
+    "description": {
+      "capital": "Ankara",
+      "population": 85664944,
+      "area_km2": 783562,
+      "languages": [
+        "Turkish"
+      ],
+      "currency": "Turkish lira (₺)",
+      "subregion": "Western Asia"
+    },
+    "flag_uri": "assets/flags/tr.png",
+    "continent": "Asia"
   },
   {
     "code": "tt",
