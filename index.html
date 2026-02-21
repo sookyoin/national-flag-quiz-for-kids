@@ -701,6 +701,46 @@
       87% { transform: translateX(-1px); }
     }
 
+    /* ===== Sound Toggle Button ===== */
+    .sound-toggle {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 700;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--card);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .sound-toggle:hover { transform: scale(1.1); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .sound-toggle:active { transform: scale(0.93); }
+
+    #screen-game .game-header ~ .sound-toggle { display: none; }
+
+    .game-header .sound-toggle-game {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .game-header .sound-toggle-game:hover { transform: scale(1.08); }
+    .game-header .sound-toggle-game:active { transform: scale(0.95); }
+
     /* ===== Responsive ===== */
     @media (max-width: 480px) {
       .mode-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -737,6 +777,9 @@
 
   <canvas id="confetti-canvas"></canvas>
 
+  <!-- ===== Sound Toggle (visible on start/result screens) ===== -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="소리 켜기/끄기">🔊</button>
+
   <!-- ===== Start Screen ===== -->
   <div id="screen-start" class="screen active">
     <div class="start-content">
@@ -750,6 +793,7 @@
   <div id="screen-game" class="screen">
     <header class="game-header">
       <button class="btn-back" id="btn-back" aria-label="뒤로가기">←</button>
+      <button class="sound-toggle-game" id="sound-toggle-game" aria-label="소리 켜기/끄기">🔊</button>
       <div class="progress-area">
         <div class="progress-top">
           <span id="progress-text">1 / 10</span>
@@ -1310,6 +1354,7 @@
         /* --- Correct --- */
         state.answered = true;
         btn.classList.add('correct');
+        playCorrectSfx();
 
         // Flag celebrate animation
         const flagCard = document.getElementById('flag-card');
@@ -1353,6 +1398,7 @@
         state.firstTry = false;
         btn.classList.add('wrong');
         btn.disabled = true;
+        playWrongSfx();
 
         // Flag shake animation
         const flagCard = document.getElementById('flag-card');
@@ -1461,6 +1507,218 @@
       setTheme('#FFECD2', '#FCB69F', '#FF6B6B');
       showScreen('start');
     });
+
+    /* ===== Audio System (Web Audio API) ===== */
+    let audioCtx = null;
+    let audioMuted = false;
+    let bgmGain = null;
+    let sfxGain = null;
+    let bgmInterval = null;
+    let bgmStarted = false;
+
+    function initAudio() {
+      if (audioCtx) return;
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+      // Master gain nodes
+      bgmGain = audioCtx.createGain();
+      bgmGain.gain.value = 0.18;
+      bgmGain.connect(audioCtx.destination);
+
+      sfxGain = audioCtx.createGain();
+      sfxGain.gain.value = 0.35;
+      sfxGain.connect(audioCtx.destination);
+    }
+
+    function ensureAudioResumed() {
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    /* --- BGM: gentle pentatonic loop --- */
+    // C major pentatonic melody notes (frequencies in Hz)
+    const BGM_NOTES = [
+      // phrase 1
+      261.63, 293.66, 329.63, 392.00, 440.00, 392.00, 329.63, 293.66,
+      // phrase 2
+      329.63, 392.00, 440.00, 523.25, 440.00, 392.00, 329.63, 261.63,
+      // phrase 3
+      293.66, 329.63, 392.00, 440.00, 392.00, 329.63, 293.66, 261.63,
+      // phrase 4
+      392.00, 440.00, 523.25, 440.00, 392.00, 329.63, 293.66, 329.63,
+    ];
+
+    let bgmNoteIndex = 0;
+
+    function playBgmNote() {
+      if (!audioCtx || audioMuted) return;
+      ensureAudioResumed();
+
+      const freq = BGM_NOTES[bgmNoteIndex % BGM_NOTES.length];
+      bgmNoteIndex++;
+
+      const now = audioCtx.currentTime;
+
+      // Soft sine tone
+      const osc = audioCtx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+
+      // Gentle envelope
+      const env = audioCtx.createGain();
+      env.gain.setValueAtTime(0, now);
+      env.gain.linearRampToValueAtTime(0.6, now + 0.08);
+      env.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
+
+      osc.connect(env);
+      env.connect(bgmGain);
+
+      osc.start(now);
+      osc.stop(now + 0.6);
+
+      // Add a subtle harmonic (octave higher, quieter)
+      const osc2 = audioCtx.createOscillator();
+      osc2.type = 'sine';
+      osc2.frequency.value = freq * 2;
+
+      const env2 = audioCtx.createGain();
+      env2.gain.setValueAtTime(0, now);
+      env2.gain.linearRampToValueAtTime(0.15, now + 0.06);
+      env2.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+
+      osc2.connect(env2);
+      env2.connect(bgmGain);
+
+      osc2.start(now);
+      osc2.stop(now + 0.45);
+    }
+
+    function startBgm() {
+      if (bgmStarted) return;
+      bgmStarted = true;
+      bgmNoteIndex = 0;
+      bgmInterval = setInterval(playBgmNote, 380);
+    }
+
+    function stopBgm() {
+      if (bgmInterval) { clearInterval(bgmInterval); bgmInterval = null; }
+      bgmStarted = false;
+    }
+
+    /* --- SFX: Correct answer (cheerful rising arpeggio) --- */
+    function playCorrectSfx() {
+      if (!audioCtx || audioMuted) return;
+      ensureAudioResumed();
+
+      const now = audioCtx.currentTime;
+      const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+      const delays = [0, 0.08, 0.16, 0.26];
+
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        osc.type = 'triangle';
+        osc.frequency.value = freq;
+
+        const env = audioCtx.createGain();
+        const t = now + delays[i];
+        env.gain.setValueAtTime(0, t);
+        env.gain.linearRampToValueAtTime(0.8, t + 0.04);
+        env.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+
+        osc.connect(env);
+        env.connect(sfxGain);
+        osc.start(t);
+        osc.stop(t + 0.4);
+      });
+
+      // Bonus sparkle
+      const sparkle = audioCtx.createOscillator();
+      sparkle.type = 'sine';
+      sparkle.frequency.value = 2093.00; // C7
+      const sparkleEnv = audioCtx.createGain();
+      const st = now + 0.34;
+      sparkleEnv.gain.setValueAtTime(0, st);
+      sparkleEnv.gain.linearRampToValueAtTime(0.3, st + 0.02);
+      sparkleEnv.gain.exponentialRampToValueAtTime(0.001, st + 0.25);
+      sparkle.connect(sparkleEnv);
+      sparkleEnv.connect(sfxGain);
+      sparkle.start(st);
+      sparkle.stop(st + 0.3);
+    }
+
+    /* --- SFX: Wrong answer (soft descending two-tone) --- */
+    function playWrongSfx() {
+      if (!audioCtx || audioMuted) return;
+      ensureAudioResumed();
+
+      const now = audioCtx.currentTime;
+      const notes = [349.23, 261.63]; // F4, C4 (descending)
+      const delays = [0, 0.15];
+
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+
+        const env = audioCtx.createGain();
+        const t = now + delays[i];
+        env.gain.setValueAtTime(0, t);
+        env.gain.linearRampToValueAtTime(0.5, t + 0.03);
+        env.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+
+        osc.connect(env);
+        env.connect(sfxGain);
+        osc.start(t);
+        osc.stop(t + 0.35);
+      });
+    }
+
+    /* --- Mute/Unmute --- */
+    function toggleMute() {
+      audioMuted = !audioMuted;
+      const icon = audioMuted ? '🔇' : '🔊';
+      document.getElementById('sound-toggle').textContent = icon;
+      document.getElementById('sound-toggle-game').textContent = icon;
+
+      if (audioMuted) {
+        stopBgm();
+        if (bgmGain) bgmGain.gain.value = 0;
+        if (sfxGain) sfxGain.gain.value = 0;
+      } else {
+        if (bgmGain) bgmGain.gain.value = 0.18;
+        if (sfxGain) sfxGain.gain.value = 0.35;
+        startBgm();
+      }
+    }
+
+    document.getElementById('sound-toggle').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!audioCtx) { initAudio(); startBgm(); return; }
+      toggleMute();
+    });
+
+    document.getElementById('sound-toggle-game').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!audioCtx) { initAudio(); startBgm(); return; }
+      toggleMute();
+    });
+
+    // Start audio on first user interaction (browser autoplay policy)
+    function onFirstInteraction() {
+      document.removeEventListener('click', onFirstInteraction);
+      document.removeEventListener('touchstart', onFirstInteraction);
+
+      if (!audioCtx) {
+        initAudio();
+        startBgm();
+      } else {
+        ensureAudioResumed();
+        if (!bgmStarted && !audioMuted) startBgm();
+      }
+    }
+    document.addEventListener('click', onFirstInteraction);
+    document.addEventListener('touchstart', onFirstInteraction);
 
     /* ===== Init ===== */
     async function init() {
