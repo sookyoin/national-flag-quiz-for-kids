@@ -1706,6 +1706,9 @@
 
     // Start audio on first user interaction (browser autoplay policy)
     function onFirstInteraction() {
+      document.removeEventListener('click', onFirstInteraction);
+      document.removeEventListener('touchstart', onFirstInteraction);
+
       if (!audioCtx) {
         initAudio();
         startBgm();
@@ -1713,8 +1716,6 @@
         ensureAudioResumed();
         if (!bgmStarted && !audioMuted) startBgm();
       }
-      document.removeEventListener('click', onFirstInteraction);
-      document.removeEventListener('touchstart', onFirstInteraction);
     }
     document.addEventListener('click', onFirstInteraction);
     document.addEventListener('touchstart', onFirstInteraction);
